@@ -39,7 +39,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
-next.config.js.nextConfig
 
 # lock files
 package-lock.json
@@ -56,5 +55,3 @@ public/antd.min.css
 /.idea
 /public/scripts/ckeditor.js
 
-# Ignore the next.config.js file
-next.config.js
