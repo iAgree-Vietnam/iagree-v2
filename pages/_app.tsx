@@ -36,6 +36,7 @@ AppProps & {
   setting: SettingResource;
 }) {
   return withTheme(
+    <AuthProvider>
     <Providers
       // account={{
       //     profile: profile,
@@ -45,12 +46,10 @@ AppProps & {
       nextAuthSession={pageProps?.session}
     >
       <TopProgressBar />
-      <GtagAuthHandler><AuthProvider>
-        <Component {...pageProps} />
-      </AuthProvider></GtagAuthHandler>
+      <Component {...pageProps} />
     </Providers>
+    </AuthProvider>
   );
-}
 
 // App.getInitialProps = async ({ Component, ctx: context }: any) => {
 //     const accessToken = CookieUtils.getAccessTokenFromServerContext(context);

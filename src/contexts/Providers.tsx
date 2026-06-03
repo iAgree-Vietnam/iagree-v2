@@ -1,5 +1,4 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { SessionProvider } from "@/lib/shim/next-auth-react";
 
 import { AccountProvider } from "./AccountContext";
 import { Provider as ReduxProvider } from "react-redux";
