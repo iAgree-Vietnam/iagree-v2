@@ -4,3 +4,4 @@ import ForgotPasswordScreen from "@/src/screens/PasswordScreen/ForgotPasswordScr
 export default function ForgotPasswordPage() {
   return <ForgotPasswordScreen />;
 }
+export const getServerSideProps = async () => ({ props: {} })

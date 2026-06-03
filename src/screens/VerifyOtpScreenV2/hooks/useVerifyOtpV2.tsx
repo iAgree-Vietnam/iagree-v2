@@ -7,7 +7,7 @@ import { VerifyEmailParams } from "@/src/data/auth/models/types";
 import { useRouter } from "next/router";
 import Cookies from "js-cookie";
 import Constants from "@/src/constants/Constants";
-import { signIn } from "next-auth/react";
+import { signIn } from "@/lib/shim/next-auth-react";
 import { useAccountContext } from "@/src/contexts/AccountContext";
 
 export default function useVerifyOtpV2() {

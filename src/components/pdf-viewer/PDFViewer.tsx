@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Document, Page, pdfjs } from 'react-pdf';
-import { DocumentCallback } from 'react-pdf/src/shared/types';
-import { PageProps } from 'react-pdf/src/Page';
+type DocumentCallback = { numPages: number };
+type PageProps = { pageNumber?: number; width?: number; scale?: number; className?: string; style?: React.CSSProperties; };
 import _ from 'lodash';
 
 // Use unpkg CDN for better reliability

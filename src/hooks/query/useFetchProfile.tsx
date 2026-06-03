@@ -7,7 +7,7 @@ import _ from 'lodash';
 import { useAccountContext } from '@/src/contexts/AccountContext';
 import { message } from 'antd';
 import { AxiosError } from 'axios';
-import { signOut } from 'next-auth/react';
+import { signOut } from '@/lib/shim/next-auth-react';
 import AuthRouteUtils from '@/src/data/auth/utils/AuthRouteUtils';
 
 export default function useFetchProfile() {

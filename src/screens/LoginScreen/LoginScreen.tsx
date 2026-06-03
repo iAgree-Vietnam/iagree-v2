@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import Head from "next/head";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { signIn, useSession } from "next-auth/react";
+import { signIn, useSession } from "@/lib/shim/next-auth-react";
 import {
   Alert,
   Button,

@@ -3,3 +3,5 @@ import CompanyRegisterScreen from "../../src/screens/RegisterScreen/CompanyRegis
 export default function CompanyRegisterPage() {
   return CompanyRegisterScreen;
 }
+
+export const getServerSideProps = async () => ({ props: {} })

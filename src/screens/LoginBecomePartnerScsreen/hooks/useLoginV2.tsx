@@ -1,5 +1,5 @@
 import { useMutation } from "@tanstack/react-query";
-import { signIn } from "next-auth/react";
+import { signIn } from "@/lib/shim/next-auth-react";
 import dialogUtils from "@/src/utils/DialogUtils";
 import { LoginParams } from "@/src/data/auth/models/types";
 import { message } from "antd";

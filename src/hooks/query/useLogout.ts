@@ -4,7 +4,7 @@ import {
   useQueryClient,
 } from "@tanstack/react-query";
 import Cookies from "js-cookie";
-import { signOut } from "next-auth/react";
+import { signOut } from "@/lib/shim/next-auth-react";
 import _ from "lodash";
 
 import AuthServices from "@/src/data/auth/services/AuthServices";

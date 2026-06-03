@@ -3,3 +3,5 @@ import PersonalRegisterScreen from "../../src/screens/RegisterScreen/PersonalReg
 export default function PersonalRegisterPage() {
   return PersonalRegisterScreen;
 }
+
+export const getServerSideProps = async () => ({ props: {} })

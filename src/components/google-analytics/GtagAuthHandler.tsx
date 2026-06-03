@@ -1,4 +1,4 @@
-import { useSession } from "next-auth/react";
+import { useSession } from "@/lib/shim/next-auth-react";
 import { useEffect } from "react";
 
 const gtag = (command: string, ...args: any[]) => {

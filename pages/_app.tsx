@@ -1,3 +1,4 @@
+import { AuthProvider } from '@/lib/auth-context'
 // import "nprogress/nprogress.css";
 // import "@/src/styles/tailwind.css"; // 👈 để cao nhất có thể
 import dynamic from "next/dynamic";
@@ -44,9 +45,9 @@ AppProps & {
       nextAuthSession={pageProps?.session}
     >
       <TopProgressBar />
-      <GtagAuthHandler>
+      <GtagAuthHandler><AuthProvider>
         <Component {...pageProps} />
-      </GtagAuthHandler>
+      </AuthProvider></GtagAuthHandler>
     </Providers>
   );
 }

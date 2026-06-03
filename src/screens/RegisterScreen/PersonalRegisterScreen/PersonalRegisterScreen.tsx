@@ -16,7 +16,7 @@ import {
 import Link from 'next/link';
 import useRegisterOtp from './hooks/useRegisterOtp';
 import ValidatorUtils from '@/src/utils/ValidatorUtils';
-import { signIn } from 'next-auth/react';
+import { signIn } from '@/lib/shim/next-auth-react';
 import TermOfUseRouteUtils from '@/src/data/term-of-use/utils/TermOfUseRouteUtils';
 import PrivacyPolicyRouteUtils from '@/src/data/privacy-policy/utils/PrivacyPolicyRouteUtils';
 import { IconSvgLocal } from '@/src/components/icon-svg-local';

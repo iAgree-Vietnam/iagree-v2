@@ -11,7 +11,7 @@ import {
   Typography,
 } from "antd";
 import Link from "next/link";
-import { signIn } from "next-auth/react";
+import { signIn } from "@/lib/shim/next-auth-react";
 
 import ValidatorUtils from "@/src/utils/ValidatorUtils";
 import TermOfUseRouteUtils from "@/src/data/term-of-use/utils/TermOfUseRouteUtils";

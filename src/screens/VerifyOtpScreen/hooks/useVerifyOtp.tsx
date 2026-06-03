@@ -9,7 +9,7 @@ import {
 import { useRouter } from "next/router";
 import Cookies from "js-cookie";
 import Constants from "@/src/constants/Constants";
-import { signIn } from "next-auth/react";
+import { signIn } from "@/lib/shim/next-auth-react";
 
 export default function useVerifyOtp() {
   const router = useRouter();

@@ -1,11 +1,7 @@
-
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { SessionProvider } from "next-auth/react";
-import { Session } from "next-auth";
+import { SessionProvider } from "@/lib/shim/next-auth-react";
 
 import { AccountProvider } from "./AccountContext";
-import { FullProfileResource } from "@/src/data/auth/models/types";
-import { SettingResource } from "../data/setting/models/setting.types";
 import { Provider as ReduxProvider } from "react-redux";
 import { store } from "../store/store";
 
@@ -22,33 +18,21 @@ const queryClient = new QueryClient({
   },
 });
 
-// interface ProvidersProps {
-//   account: {
-//     profile: FullProfileResource | null;
-//     accessToken: string | null;
-//     setting: SettingResource | null;
-//   };
-//   children: React.ReactNode;
-//   nextAuthSession: Session;
-// }
 interface ProvidersProps {
   children: React.ReactNode;
-  nextAuthSession?: Session | null;
+  nextAuthSession?: any;
 }
-
-
 
 function Providers({ children, nextAuthSession }: ProvidersProps) {
   return (
     <ReduxProvider store={store}>
       <QueryClientProvider client={queryClient}>
-        <SessionProvider session={nextAuthSession}>
+        
           <AccountProvider>{children}</AccountProvider>
-        </SessionProvider>
+        
       </QueryClientProvider>
     </ReduxProvider>
   );
 }
-
 
 export default Providers;

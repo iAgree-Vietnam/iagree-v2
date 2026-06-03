@@ -5,7 +5,7 @@ import { useRouter } from "next/router";
 import { Col, Row } from "antd";
 import { useQueryClient } from "@tanstack/react-query";
 import Cookies from "js-cookie";
-import { useSession } from "next-auth/react";
+import { useSession } from "@/lib/shim/next-auth-react";
 
 import { useAccountContext } from "@/src/contexts/AccountContext";
 import Constants from "@/src/constants/Constants";
