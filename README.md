@@ -1,37 +1,60 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# iAgree v2 🚀
 
-## Getting Started
+**AI-powered professional freelancer marketplace**
 
-First, run the development server:
+## Stack
+- **Frontend**: Next.js 15 (Pages Router)
+- **Backend**: Supabase (Auth + Postgres + Storage + Realtime)
+- **AI**: Anthropic Claude API
+- **Payments**: Stripe
+- **Email**: Resend
+- **Deploy**: Vercel
+
+## Setup
 
 ```bash
+npm install
+cp .env.local.example .env.local
+# Fill in env vars
 npm run dev
-# or
-yarn dev
-cd ckeditor5 && yarn build && cd .. && yarn remove ckeditor5-custom-build --ignore-engines &&  yarn add file:./ckeditor5 --ignore-engines && yarn build && pm2 delete iagree && pm2 start npm --name "iagree" -- start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Supabase Migration
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+1. Create project at supabase.com
+2. Run migrations:
+```bash
+supabase db push
+# or paste SQL from supabase/migrations/ into Supabase SQL editor
+```
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+## Build Plan
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+### Phase 1 (Weeks 2-5): Core
+- [x] Repo setup + cleanup TMDT features
+- [x] Supabase schema design
+- [ ] Auth (Supabase → replace Laravel)
+- [ ] Profiles
+- [ ] Jobs CRUD
+- [ ] Search + Browse
+- [ ] Proposals/Bidding
+- [ ] Messaging (Supabase Realtime)
+- [ ] Subscription (Stripe)
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### Phase 2 (Weeks 6-8): AI
+- [ ] AI Job Brief Writer
+- [ ] AI Smart Match
+- [ ] AI Price Benchmark
+- [ ] AI Contract Generator
 
-## Learn More
+### Phase 3 (Weeks 9-12): Trust & Growth
+- [ ] A&D Verified badge
+- [ ] quydinh.vn integration
+- [ ] SEO landing pages
+- [ ] Review system
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Removed (vs v1)
+- Internal wallet / escrow (TMDT compliance)
+- Legal document templates
+- MySign integration (replaced by native contract system)
+- Payment gateway (Stripe subscription only, no transaction commission)
