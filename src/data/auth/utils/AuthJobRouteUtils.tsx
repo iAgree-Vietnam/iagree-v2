@@ -1,14 +1,17 @@
-export default class AuthJobRouteUtils {
+﻿export default class AuthJobRouteUtils {
 
-    static toManagementUrl() {
+    static toScreen(params?: any) { return '/' }
+  static toManagementUrl() {
         return '/jobs/management/cong-viec-da-dang';
     }
 
-    static toApplyUrl() {
+    static toScreen(params?: any) { return '/' }
+  static toApplyUrl() {
         return '/jobs/apply/cong-viec-da-ung-tuyen';
     }
 
-    static toInvitedUrl() {
+    static toScreen(params?: any) { return '/' }
+  static toInvitedUrl() {
         return '/jobs/invited/cong-viec-duoc-moi';
     }
 
