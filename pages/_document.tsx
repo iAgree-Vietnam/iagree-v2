@@ -1,7 +1,13 @@
-import Document, { Html, Head, Main, NextScript } from "next/document";
+﻿import Document, { Html, Head, Main, NextScript, DocumentContext } from "next/document";
 
-// Simplified _document - removed @ant-design/cssinjs StyleProvider
-// which was causing SSR 500 errors on Vercel
+// Safe SSR wrapper for antd CSS-in-JS
+let StyleProvider: any = ({ children }: any) => children
+let createCache: any = () => ({})
+try {
+  const cssinjs = require("@ant-design/cssinjs");
+  StyleProvider = cssinjs.StyleProvider;
+  createCache = cssinjs.createCache;
+} catch { /* graceful degradation */ }
 
 export default function MyDocument() {
   return (
@@ -18,3 +24,17 @@ export default function MyDocument() {
     </Html>
   );
 }
+
+MyDocument.getInitialProps = async (ctx: DocumentContext) => {
+  const cache = createCache();
+  const originalRenderPage = ctx.renderPage;
+  ctx.renderPage = () =>
+    originalRenderPage({
+      enhanceApp: (App: any) => (props: any) => (
+        <StyleProvider cache={cache}>
+          <App {...props} />
+        </StyleProvider>
+      ),
+    });
+  return await Document.getInitialProps(ctx);
+};
