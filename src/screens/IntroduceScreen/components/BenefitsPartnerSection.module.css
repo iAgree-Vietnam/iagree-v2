@@ -1,0 +1,318 @@
+/* src/components/BenefitsPartnerSection.module.css */
+.benefitsSection {
+  padding: 6rem 1rem;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.backgroundImage {
+  position: absolute;
+  background: url("/assets/img/introduce/partner_office_bg.png") no-repeat center center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+}
+
+.blackOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.75);
+  z-index: -1;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.mainTitle {
+  font-size: clamp(1.5rem, 5vw, 2.5rem) !important;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.2;
+  padding-bottom: 3rem;
+}
+
+.greenText {
+  color: #12DC19;
+}
+
+.benefitsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+/* Cải tiến benefitCard để giống partnerCard */
+.benefitCard {
+  background-color: rgba(255, 255, 255, 0.1); /* Nền mờ */
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Viền mỏng */
+  border-radius: 12px;
+  padding: 3.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: all 0.5s ease;
+  height: 250px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  backdrop-filter: blur(10px); /* Hiệu ứng làm mờ nền */
+}
+
+/* Hover state: Đổi màu nền, viền và transform */
+.benefitCard.hovered {
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 1px solid #12DC19; /* Viền sáng hơn khi hover */
+  padding: 1rem 1.5rem;
+}
+
+/* Đảm bảo màu chữ và icon chuyển sang màu trắng hoặc màu sáng khi hover */
+.benefitCard .cardDescription,
+.benefitCard .iconContainer svg {
+  color: #fff; /* Màu mặc định là trắng để phù hợp với nền tối */
+  transition: color 0.5s ease;
+}
+
+/* Màu của icon container và icon khi chưa hover */
+.iconContainer {
+  width: 70px;
+  height: 70px;
+  background-color: rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  transition: all 0.5s ease;
+}
+
+/* Khi hover, icon container chuyển sang màu trong suốt hơn */
+.benefitCard.hovered .iconContainer {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Cài đặt màu cho icon bên trong */
+.iconContainer svg {
+  font-size: 2.5rem;
+  color: #12DC19; /* Màu xanh nổi bật */
+  transition: color 0.5s ease;
+}
+
+/* Title luôn là màu trắng */
+.cardTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #12DC19;
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+  transition: color 0.5s ease;
+}
+
+.descriptionWrapper {
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition: all 0.5s ease;
+  transform: translateY(10px);
+}
+
+.benefitCard.hovered .descriptionWrapper {
+  max-height: 200px;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Card description màu trắng */
+.cardDescription {
+  font-size: 1rem;
+  margin: 0;
+  line-height: 1.6;
+  color: #d1d5db; /* Màu xám nhạt để dễ đọc */
+}
+
+/* Styling cho Gift Card */
+.giftCard {
+  background-image: linear-gradient(135deg, #078c35, #12dc19);
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  display: inline-block;
+  color: #fff;
+  position: relative;
+  z-index: 1;
+  transform: translateY(0);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.giftCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+}
+
+.giftContent {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 0.5rem 1rem;
+}
+
+.giftIconWrapper {
+  width: 50px;
+  height: 50px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.giftIcon {
+  font-size: 1.8rem;
+  color: #fff;
+}
+
+.giftText {
+  font-size: 1.0rem;
+  font-weight: 400;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.giftAmount {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+/* Responsive cho thiết bị di động */
+@media (max-width: 1250px) {
+    .cardDescription {
+        font-size: 0.95rem;
+        margin: 0;
+        line-height: 1.1;
+    }
+}
+
+@media (max-width: 1024px) {
+    .cardDescription {
+        font-size: 0.9rem;
+        margin: 0;
+        line-height: 1.1;
+    }
+}
+
+@media (max-width: 950px) {
+    .cardDescription {
+        font-size: 0.85rem;
+        margin: 0;
+        line-height: 1.1;
+    }
+}
+
+@media (max-width: 850px) {
+    .cardDescription {
+        font-size: 0.8rem;
+        margin: 0;
+        line-height: 1.1;
+    }
+}
+@media (max-width: 768px) {
+  .benefitsGrid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem; /* Tăng khoảng cách giữa các thẻ để dễ nhìn hơn */
+  }
+
+  .benefitCard {
+    height: auto;
+    padding: 2rem 1rem;
+    display: flex; /* Sử dụng flexbox để căn giữa */
+    flex-direction: column;
+    align-items: center; /* Căn giữa theo chiều ngang */
+    text-align: center; /* Căn giữa văn bản */
+    overflow: visible; /* Điều chỉnh để nội dung không bị ẩn */
+  }
+
+  /* Bỏ hiệu ứng hover trên mobile */
+  .benefitCard.hovered {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: none;
+    padding: 2rem 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .benefitCard.hovered .cardTitle,
+  .benefitCard.hovered .cardDescription,
+  .benefitCard.hovered .iconContainer svg {
+    color: #fff;
+  }
+  
+  .benefitCard.hovered .iconContainer {
+    background-color: rgba(255, 255, 255, 0.15);
+  }
+
+  .cardTitle {
+      color: #12DC19;
+  }
+
+  .iconContainer {
+    margin-bottom: 0.5rem; /* Giảm khoảng cách để gọn hơn */
+  }
+
+  /* Hiển thị luôn description và bỏ animation trên mobile */
+  .descriptionWrapper {
+    max-height: none;
+    opacity: 1;
+    transform: none;
+    margin-top: 1rem;
+  }
+  
+  .cardDescription {
+      text-align: center;
+      color: #d1d5db;
+  }
+}
+
+/* Các media query nhỏ hơn (giữ nguyên) */
+@media (max-width: 1250px) {
+    .cardDescription {
+        font-size: 0.95rem;
+        margin: 0;
+        line-height: 1.1;
+    }
+}
+
+@media (max-width: 1024px) {
+    .cardDescription {
+        font-size: 0.9rem;
+        margin: 0;
+        line-height: 1.1;
+    }
+}
+
+@media (max-width: 950px) {
+    .cardDescription {
+        font-size: 0.85rem;
+        margin: 0;
+        line-height: 1.1;
+    }
+}
+
+@media (max-width: 850px) {
+    .cardDescription {
+        font-size: 0.8rem;
+        margin: 0;
+        line-height: 1.1;
+    }
+}

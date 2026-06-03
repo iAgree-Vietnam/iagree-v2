@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nextjs-deployment
+  labels:
+    app: nextjs
+spec:
+  replicas: 2  # Số lượng pod bạn muốn chạy (có thể điều chỉnh tùy theo nhu cầu)
+  selector:
+    matchLabels:
+      app: nextjs
+  template:
+    metadata:
+      labels:
+        app: nextjs
+    spec:
+      containers:
+        - name: nextjs
+          image: your-docker-repo/nextjs-app:latest  # Docker image của ứng dụng Next.js
+          ports:
+            - containerPort: 3000  # Cổng mà ứng dụng Next.js sẽ lắng nghe
+          env:
+            - name: NODE_ENV
+              value: "production"  # Cấu hình môi trường cho Next.js
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nextjs-service
+spec:
+  selector:
+    app: nextjs  # Kết nối với deployment `nextjs`
+  ports:
+    - protocol: TCP
+      port: 80  # Cổng mà service sẽ expose
+      targetPort: 3000  # Cổng trong container
+  type: ClusterIP  # Có thể thay đổi thành LoadBalancer nếu cần expose ra ngoài

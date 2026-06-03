@@ -1,0 +1,250 @@
+.processSection {
+  padding: 6rem 0rem;
+  background-color: #fff;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.sectionTitle {
+  font-size: clamp(1.5rem, 5vw, 2.5rem) !important;
+  font-weight: 700;
+  color: #09993E;
+  line-height: 1.2;
+  margin-bottom: 3rem;
+}
+
+.sectionTitleSpan {
+  font-size: clamp(1.5rem, 5vw, 2.5rem) !important;
+  color: #000;
+  font-weight: 700;
+}
+
+/* Desktop Styles (Default) */
+.processStepsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 2rem;
+  justify-content: center;
+}
+
+.processStepCard {
+  background-color: white;
+  border-radius: 12px;
+  padding: 1.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+  position: relative;
+  border: 1px solid #e0e0e0;
+  cursor: pointer;
+}
+
+.processStepCard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  border: 1px solid #12DC19;
+}
+
+.stepNumberWrapper {
+  width: 50px;
+  height: 50px;
+  background-color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #12DC19;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.stepNumber {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #12DC19;
+  z-index: 2;
+}
+
+.stepNumberWrapper::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #09993e, #4CAF50, #8BC34A);
+  z-index: 1;
+  border-radius: 50%;
+  opacity: 0.1;
+  filter: blur(5px);
+}
+
+.stepText {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #333;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.processDetailsContainer {
+  margin-top: 3rem;
+  border-radius: 12px;
+  padding: 2rem 2rem;
+  text-align: left;
+  background-color: #ffffff;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  transition: background-color 0.4s ease;
+  position: relative;
+}
+
+.detailsArrow {
+  position: absolute;
+  top: -15px;
+  width: 0;
+  height: 0;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-bottom: 15px solid;
+  transform: translateX(-50%);
+  transition: left 0.3s ease;
+}
+
+.processDetailsContent {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+
+.processDetailsText {
+  flex: 1;
+}
+
+.detailsTitle {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  text-align: justify;
+  line-height: 1.3;
+  color: black;
+  transition: color 0.4s ease;
+}
+
+.detailsDescription {
+  font-size: 1.2rem;
+  text-align: justify;
+  line-height: 1.6;
+  color: rgb(19, 18, 18);
+  transition: color 0.4s ease;
+}
+
+.processDetailsImage {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+}
+
+/* ------------------------------------------------------------------------ */
+/* Tablet/Mobile Styles */
+/* ------------------------------------------------------------------------ */
+
+@media (max-width: 1092px) {
+  .processStepsGrid,
+  .processDetailsContainer {
+    display: none;
+  }
+
+  .processStepsMobile {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .processStepCardMobile {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    padding: 1rem;
+    border-radius: 12px;
+    background-color: white;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+    transition: box-shadow 0.3s ease, transform 0.3s ease, border-left 0.3s ease;
+    border-left: 5px solid transparent;
+  }
+
+  .processStepCardMobile.activeCardMobile {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    border-left: 5px solid #09993e;
+  }
+
+  .mobileTextWrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .mobileDetailsContainer {
+    margin-top: 1rem;
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-align: left;
+    animation: slideDown 0.4s ease-out;
+  }
+
+  .processDetailsContentMobile {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    text-align: center;
+  }
+
+  .processDetailsTextMobile {
+    flex: 1;
+  }
+
+  .processDetailsImageMobile {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .processDetailsImageMobile img {
+    border-radius: 12px;
+    max-width: 100%;
+    height: auto;
+  }
+
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+/* Hide mobile styles on desktop */
+@media (min-width: 1093px) {
+  .processStepsMobile {
+    display: none;
+  }
+}

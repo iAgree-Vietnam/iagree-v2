@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thông báo ứng tuyển mới - iAgree</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            line-height: 1.6;
+            color: #334155;
+            margin: 0;
+            padding: 0;
+            background-color: #f0fdf4; /* Nền xanh lá cực nhạt */
+        }
+        .container {
+            max-width: 600px;
+            margin: 30px auto;
+            background: #ffffff;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+            border: 1px solid #dcfce7;
+        }
+        .header {
+            background: linear-gradient(135deg, #064e3b 0%, #059669 100%); /* Gradient xanh lá đậm chuyên nghiệp */
+            color: #ffffff;
+            padding: 40px 30px;
+            text-align: center;
+            border-bottom: 4px solid #10b981;
+        }
+        .header img {
+            height: 45px;
+            margin-bottom: 20px;
+            filter: brightness(0) invert(1); /* Chuyển logo sang trắng nếu cần */
+        }
+        .header .badge {
+            background: rgba(255, 255, 255, 0.2);
+            color: #ffffff;
+            padding: 6px 14px;
+            border-radius: 99px;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            display: inline-block;
+            margin-bottom: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 22px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+        .header p {
+            margin: 8px 0 0;
+            opacity: 0.9;
+            font-size: 15px;
+        }
+        .content {
+            padding: 30px;
+        }
+        .card {
+            background: #ffffff;
+            border: 1px solid #f0fdf4;
+            border-radius: 20px;
+            padding: 24px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
+        }
+        .section-title {
+            font-size: 14px;
+            font-weight: 800;
+            color: #065f46;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+        }
+        .info-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .info-table td {
+            padding: 12px 0;
+            border-bottom: 1px solid #f0fdf4;
+        }
+        .info-table tr:last-child td {
+            border-bottom: none;
+        }
+        .label {
+            font-weight: 600;
+            color: #64748b;
+            font-size: 13px;
+            width: 45%;
+        }
+        .value {
+            color: #0f172a;
+            font-size: 14px;
+            font-weight: 700;
+            text-align: right;
+        }
+        .intro-container {
+            background-color: #f0fdf4;
+            border-left: 4px solid #10b981;
+            padding: 20px;
+            border-radius: 12px;
+            margin: 10px 0 30px;
+        }
+        .intro-text {
+            font-size: 14px;
+            color: #064e3b;
+            line-height: 1.8;
+            white-space: pre-wrap;
+        }
+        .file-list {
+            margin-top: 15px;
+        }
+        .file-item {
+            background: #ffffff;
+            border: 1px solid #dcfce7;
+            border-radius: 12px;
+            padding: 14px 18px;
+            margin-bottom: 10px;
+            display: block;
+            text-decoration: none;
+            color: #059669;
+            font-weight: 700;
+            font-size: 13px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        }
+        .footer {
+            background-color: #f8fafc;
+            padding: 30px;
+            text-align: center;
+            border-top: 1px solid #f1f5f9;
+        }
+        .footer p {
+            margin: 6px 0;
+            font-size: 12px;
+            color: #94a3b8;
+            font-weight: 500;
+        }
+        .footer .brand-name {
+            color: #059669;
+            font-weight: 800;
+            font-size: 15px;
+            letter-spacing: 0.5px;
+            margin-bottom: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <img src="https://iagree.vn/assets/img/logo.svg" alt="iAgree Logo">
+            <br>
+            <div class="badge">Hồ sơ ứng tuyển mới</div>
+            <h1>{{jobTitle}}</h1>
+            <p>Chào mừng ứng viên tiềm năng gia nhập đội ngũ iAgree</p>
+        </div>
+
+        <div class="content">
+            <!-- Thẻ thông tin cá nhân -->
+            <div class="card">
+                <div class="section-title">Thông tin ứng viên</div>
+                <table class="info-table">
+                    <tr>
+                        <td class="label">Họ và Tên</td>
+                        <td class="value" style="color: #059669;">{{fullName}}</td>
+                    </tr>
+                    <tr>
+                        <td class="label">Số điện thoại</td>
+                        <td class="value">{{phone}}</td>
+                    </tr>
+                    <tr>
+                        <td class="label">Email liên hệ</td>
+                        <td class="value"><a href="mailto:{{email}}" style="color: #059669; text-decoration: none;">{{email}}</a></td>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- Thẻ chi tiết năng lực -->
+            <div class="card">
+                <div class="section-title">Năng lực & Kỳ vọng</div>
+                <table class="info-table">
+                    <tr>
+                        <td class="label">Kinh nghiệm làm việc</td>
+                        <td class="value">{{yearsExp}}</td>
+                    </tr>
+                    <tr>
+                        <td class="label">Mức lương mong muốn</td>
+                        <td class="value" style="color: #10b981;">{{salary}}</td>
+                    </tr>
+                    <tr>
+                        <td class="label">Sẵn sàng nhận việc</td>
+                        <td class="value">
+                            {{startTime}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="label">Nguồn ứng tuyển</td>
+                        <td class="value">{{source}}</td>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- Thư giới thiệu -->
+            <div class="section-title" style="margin-left: 10px;">Thư giới thiệu / Cover Letter</div>
+            <div class="intro-container">
+                <div class="intro-text">{{intro}}</div>
+            </div>
+
+          
+
+        <!-- Footer -->
+        <div class="footer">
+            <div class="brand-name">A&D Vietnam</div>
+            <p>Nền tảng kết nối lực lượng lao động tự do & Doanh nghiệp</p>
+        </div>
+    </div>
+</body>
+</html>
+
+
+export interface ApplicationPayload {
+    jobTitle: string;      // Tiêu đề vị trí (VD: "Senior React Developer")
+    fullName: string;      // Họ và tên ứng viên
+    phone: string;         // Số điện thoại
+    email: string;         // Địa chỉ email
+    yearsExp: string;      // Số năm kinh nghiệm (VD: "2 - 3 năm")
+    salary: string;        // Mức lương mong muốn (VD: "15 - 20 triệu")
+    startTime: string;     // Thời gian có thể nhận việc (VD: "Đi làm ngay")
+    source: string;        // Nguồn ứng tuyển (VD: "Facebook", "LinkedIn")
+    intro: string;         // Thư giới thiệu / Cover Letter
+    files: ApplicationFile[]; // Danh sách các file đã upload
+    pathname: string;      // Đường dẫn URL hiện tại của trang tuyển dụng
+}

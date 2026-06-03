@@ -1,0 +1,161 @@
+.statsWrapper {
+  position: relative;
+  z-index: 1;
+  color: white;
+  text-align: center;
+  padding: 0 1rem;
+  padding-top: 4rem;
+  margin-top: 2rem;
+}
+
+.statsTitle {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #12DC19;
+  margin-bottom: 3rem;
+}
+
+.statsGridFirst {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 5rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.statsGridSecond {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8rem;
+  flex-wrap: wrap;
+}
+
+.statCard {
+  background-color: white;
+  border-radius: 50%;
+  width: 180px;
+  height: 180px;
+  display: flex;
+  padding: 20px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* Pseudo-element để tạo hiệu ứng viền gradient */
+.statCard::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #09993e, #4CAF50, #8BC34A);
+  z-index: -1;
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Hiệu ứng khi hover */
+.statCard:hover::before {
+  opacity: 1;
+}
+
+.statCard:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Thêm hiệu ứng thay đổi màu chữ khi hover */
+.statCard:hover .statIcon,
+.statCard:hover .statValue,
+.statCard:hover .statLabel {
+  color: white;
+  fill: white;
+  z-index: 2;
+  transition: color 0.3s ease;
+}
+
+.statIcon {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 0.2rem;
+  color: #000000;
+  transition: color 0.3s ease;
+}
+
+.statValue {
+  font-size: 2.0rem;
+  font-weight: 700;
+  color: #09993e;
+  transition: color 0.3s ease;
+}
+
+.statLabel {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #666;
+  margin: 0;
+  transition: color 0.3s ease;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .statsGridFirst,
+  .statsGridSecond {
+    gap: 1.5rem;
+  }
+  .statCard {
+    width: 160px;
+    height: 160px;
+  }
+  .statValue {
+    font-size: 1.5rem;
+  }
+  .statLabel {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .statsGridFirst,
+  .statsGridSecond {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+  .statCard {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    padding: 1.5rem;
+  }
+  .statValue {
+    font-size: 2.0rem;
+  }
+  .statLabel {
+    font-size: 1.0rem;
+  }
+  .statCard::before {
+    border-radius: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .statValue {
+    font-size: 1.6rem;
+  }
+  .statLabel {
+    font-size: 0.8rem;
+  }
+}

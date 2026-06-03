@@ -1,0 +1,184 @@
+/* FoundingStorySection.module.css */
+
+.foundingStorySection {
+  position: relative;
+  padding: 6rem 0rem;
+  text-align: center;
+  overflow: hidden;
+  margin: 0 auto; /* Đảm bảo section được căn giữa */
+    /* Thêm background và border */
+  z-index: 1;
+}
+
+.backgroundImage {
+  position: absolute;
+  background: url("/assets/img/introduce/ceo_img_2.png") no-repeat center center;
+  background-color: #f97910;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+}
+
+.blackOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.85);
+  z-index: -1;
+}
+
+.contentContainer {
+  position: relative;
+  max-width: 1200px; /* Giảm max-width để nội dung có không gian thở hơn */
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center; /* Căn giữa theo chiều dọc */
+  justify-content: center; /* Căn giữa theo chiều ngang */
+  gap: 10rem; /* Giảm khoảng cách giữa 2 cột */
+}
+
+.imageWrapper {
+  flex-shrink: 0;
+  border-radius: 12px;
+  overflow: hidden;
+  order: 2;
+}
+
+.founderImage {
+  width: 500px; /* Giảm kích thước hình ảnh mặc định */
+  height: auto;
+  display: block;
+}
+
+.textWrapper {
+  text-align: left;
+  max-width: 550px; /* Tăng max-width để chữ không bị hẹp */
+  order: 1;
+}
+
+.mainTitle {
+  font-size: clamp(1.5rem, 5vw, 2.5rem) !important;
+  font-weight: 700;
+  color: white;
+  text-align: center;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.greenText {
+  color: #12dc19;
+  font-weight: 600;
+}
+
+.storyText {
+  font-size: 1.1rem; /* Giảm font chữ */
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  color: #e0e0e0;
+  text-align: justify;
+}
+
+.signatureWrapper {
+  text-align: center; /* Căn lề trái cho chữ ký */
+  margin-top: 2rem;
+}
+
+.signatureText {
+  font-size: 2.5rem; /* Giảm font chữ */
+  margin-bottom: 0.5rem;
+  line-height: 1;
+  color: white;
+}
+
+.signatureSubtext {
+  font-size: 0.9rem; /* Giảm font chữ */
+  line-height: 1.4;
+  color: #c0c0c0;
+  margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 1400px) {
+  .contentContainer {
+    gap: 6rem;
+  }
+  .founderImage {
+    width: 500px;
+  }
+  .mainTitle {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 1200px) {
+  .foundingStorySection {
+    padding: 4rem 0rem;
+  }
+  .contentContainer {
+    gap: 2rem;
+  }
+  .founderImage {
+    width: 350px;
+  }
+  .mainTitle {
+    font-size: 1.8rem;
+  }
+  .storyText {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .contentContainer {
+    flex-direction: column;
+    align-items: center; /* Căn giữa lại khi chuyển sang 1 cột */
+    gap: 2rem;
+  }
+  .textWrapper {
+    text-align: center;
+    order: 2;
+  }
+  .imageWrapper {
+    order: 1;
+    display: flex;
+    justify-content: center;
+  }
+  .mainTitle,
+  .signatureWrapper {
+    text-align: center;
+  }
+  .founderImage {
+    width: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .foundingStorySection {
+    padding: 3rem 1rem;
+  }
+  .founderImage {
+    width: 250px;
+  }
+  .mainTitle {
+    font-size: 1.6rem;
+  }
+  .storyText {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .mainTitle {
+    font-size: 1.4rem;
+  }
+  .storyText {
+    font-size: 0.85rem;
+  }
+}

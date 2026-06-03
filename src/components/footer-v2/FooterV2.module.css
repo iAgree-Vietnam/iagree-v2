@@ -1,0 +1,170 @@
+.contentWrapper {
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.contentWrapper .policyInfo {
+  margin: 0 20px;
+}
+
+.partnerLogos {
+  display: flex;
+  margin-top: 0.8rem;
+  gap: 16px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.antLayoutFooter {
+  padding: 0;
+  padding-top: 80px;
+  overflow-x: hidden;
+  background-color: #ffffff;
+  position: relative;
+}
+
+/* Đảm bảo menu con không có padding mặc định */
+.footerWrapper :global(.ant-menu-vertical .ant-menu-item),
+.footerWrapper :global(.ant-menu-vertical .ant-menu-submenu-title) {
+  padding-inline-start: 0 !important;
+  padding-inline-end: 0;
+}
+
+.footerMenuContainer a:hover {
+  color: #09993e !important;
+  font-weight: 400;
+}
+
+.footerWrapper .footerInfoContainer,
+.footerWrapper .footerInfoContainer * {
+  color: #000 !important;
+}
+
+.footerWrapper .footerMenuContainer {
+  background: transparent;
+  border-inline-end: none !important;
+  margin-top: 10px;
+}
+
+/* Đảm bảo các mục menu không có padding và có khoảng cách đều */
+.footerWrapper .footerMenuContainer :global(.ant-menu-item) {
+  background: transparent !important;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: normal;
+  height: auto;
+  min-height: 20px;
+  margin-bottom: 8px;
+  padding: 0 !important;
+}
+
+/* Bỏ padding của menu inline root */
+.footerWrapper :global(.ant-menu-inline.ant-menu-root > .ant-menu-item),
+.footerWrapper :global(.ant-menu-inline.ant-menu-root > .ant-menu-submenu > .ant-menu-submenu-title) {
+  padding-left: 0 !important;
+}
+
+.footerWrapper .footerLogo {
+  margin-bottom: 30px;
+}
+
+.footerWrapper .footerTitle {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: normal;
+  margin-bottom: 0;
+}
+
+.titleMargin {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: normal;
+  margin-top: 3rem;
+}
+
+.footerWrapper .footerInfoContainer {
+  margin-bottom: 2rem;
+}
+
+.footerWrapper .footerInfoContainer:last-child {
+  margin-bottom: 0;
+}
+
+.footerWrapper .footerInfoContainer .footerInfoLabel {
+  margin-bottom: 5px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.footerWrapper .footerInfoContainer .footerInfoValue {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0.28px;
+}
+
+.footerWrapper .footerMainContainer {
+  padding: 0 16px;
+}
+
+.footerWrapper .copyrightWrapper {
+  position: relative;
+  margin-top: 60px;
+  padding: 0 16px;
+}
+
+.footerWrapper .copyrightWrapper .contentWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  flex-direction: column;   
+  gap: 12px;  
+}
+
+.ant-layout-footer::before,
+.footerWrapper .copyrightWrapper::before {
+  display: block;
+  content: "";
+  width: 100%;
+  height: 1px;
+  background-color: #25272d;
+  opacity: 0.2;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.footerWrapper .copyrightText {
+  color: #25272d;
+}
+
+.footerWrapper .footerMainContainer {
+  padding: 0 16px;
+}
+
+@media(max-width: 992px) {
+  .footerWrapper .copyrightWrapper {
+    margin-top: 40px;
+  }
+
+  /* Cải tiến cho chế độ di động */
+  .footerWrapper .footerMenuContainer :global(.ant-menu-sub .ant-menu-item) {
+    padding-left: 0 !important;
+  }
+
+  .footerWrapper .footerMenuContainer :global(.ant-menu-submenu-arrow) {
+    inset-inline-end: 0;
+  }
+}
+
+@media (min-width: 768px) {
+  .footerWrapper .copyrightWrapper .contentWrapper {
+    flex-direction: row;      /* Chuyển lại thành dạng hàng */
+    justify-content: space-between;
+    gap: 0;                   /* Xóa gap nếu justify-content đã đủ chia khoảng cách */
+    text-align: left;         /* Trả về căn lề trái */
+  }
+}

@@ -1,0 +1,119 @@
+/* VideoThumbnail.module.css */
+
+.container {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 800px;
+    aspect-ratio: 16 / 9;
+    position: relative;
+    margin: 2rem auto;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.75); /* Lớp phủ đen trong suốt */
+    border-radius: 12px;
+    z-index: 1; /* Đảm bảo lớp phủ nằm dưới content */
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    position: relative;
+    z-index: 2; /* Đảm bảo nội dung nằm trên lớp phủ */
+}
+
+.title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #fff; /* Thay đổi màu chữ thành trắng để dễ đọc trên nền tối */
+    margin-bottom: 1rem;
+    user-select: none;
+}
+.playButton {
+    background-color: #4CAF50 !important;
+    border-color: #4CAF50 !important;
+    color: #fff !important;
+    font-size: 1.2rem !important;
+    height: auto !important;
+    padding: 0.5rem 2rem !important;
+    border-radius: 50px !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.5rem;
+    transition: all 0.3s ease-in-out;
+    box-shadow: none;
+}
+
+.playButton:hover {
+    background-color: #067c2f !important;
+    border-color: #067c2f !important;
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(9, 153, 62, 0.6) !important; 
+}
+
+.anticon {
+    height: 22px;
+    width: 22px;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 1.5rem;
+    }
+    .title {
+        font-size: 1.2rem;
+        margin-bottom: 1.5rem;
+    }
+    .playButton {
+        font-size: 1.2rem !important;
+        padding: 0.5rem 1.5rem !important;
+    }
+    .playButton .anticon {
+        font-size: 1.5rem;
+    }
+    .logoWrapper {
+        width: 30px;
+        height: 30px;
+        bottom: 0.8rem;
+        right: 0.8rem;
+    }
+    .logo, .defaultLogo {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 1rem;
+    }
+    .title {
+        font-size: 0.8rem;
+        margin-bottom: 1rem;
+    }
+    .playButton {
+        font-size: 1rem !important;
+        padding: 0.5rem 1rem !important;
+    }
+    .playButton .anticon {
+        font-size: 1.2rem;
+    }
+}

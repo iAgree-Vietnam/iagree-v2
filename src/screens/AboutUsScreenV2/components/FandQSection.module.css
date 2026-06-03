@@ -1,0 +1,169 @@
+.faqSection {
+  padding: 4rem 1rem; /* Giảm padding trên mobile cho thoáng */
+  background-color: #fff;
+  margin-top: 2rem;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.sectionTitle {
+  font-size: clamp(1.5rem, 5vw, 2.5rem) !important;
+  font-weight: 700;
+  color: #333;
+}
+
+.greenText {
+  color: #12DC19;
+}
+
+.greenTextPrimary {
+  color: #09993E;
+  font-weight: 600;
+}
+
+.underline {
+  width: 100px; /* Giảm chiều dài underline cho tinh tế */
+  height: 2px;
+  background-color: #09993E;
+  margin: 0.5rem auto 0;
+}
+
+.accordionTwoColumns {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.accordionColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 50%;
+}
+
+.accordionItem {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  height: max-content; /* Đảm bảo item co giãn theo nội dung */
+}
+
+.accordionItem:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.accordionButton {
+  width: 100%;
+  background-color: white;
+  padding: 1rem 1.5rem;
+  text-align: left;
+  font-weight: 600;
+  color: #333;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  min-height: 60px; /* Đảm bảo chiều cao tối thiểu */
+  transition: all 0.3s ease;
+}
+
+.accordionButtonContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  gap: 10px;
+}
+
+.buttonText {
+  font-size: clamp(0.9rem, 1.5vw, 1rem); /* Tăng nhẹ size chữ mobile */
+  white-space: normal; /* QUAN TRỌNG: Cho phép xuống dòng */
+  overflow: visible;    /* QUAN TRỌNG: Hiển thị hết chữ */
+  text-overflow: clip;  /* QUAN TRỌNG: Bỏ dấu ba chấm */
+  flex-grow: 1;
+  line-height: 1.5;     /* Tăng khoảng cách dòng để dễ đọc khi xuống hàng */
+  display: block;
+}
+
+.ulList {
+    padding-left: 1.2rem;
+    margin-top: 0.5rem;
+}
+
+.accordionButton:hover {
+  background-color: #09993E;
+  color: white;
+}
+
+/* Đổi màu arrow khi hover button */
+.accordionButton:hover .downArrow {
+  color: white;
+}
+
+.downArrow {
+  transition: transform 0.3s ease;
+  font-size: 0.8rem;
+  color: #999;
+  flex-shrink: 0; /* Không cho icon bị bóp méo */
+}
+
+.rotated {
+  transform: rotate(-180deg);
+}
+
+.answerContent {
+  background-color: #f9f9f9;
+  padding: 0 1.5rem;
+  max-height: 0;
+  overflow: hidden;
+  color: #333;
+  transition: max-height 0.4s ease-in-out, padding 0.4s ease-in-out;
+  line-height: 1.6;
+}
+
+.answerContent.active {
+  max-height: 1000px; /* Tăng max-height để không bị cắt nội dung dài */
+  padding: 1rem 1.5rem;
+}
+
+/* --- Responsive --- */
+@media (max-width: 992px) {
+  .accordionTwoColumns {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 0 1rem;
+  }
+  .accordionColumn {
+    width: 100%;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .faqSection {
+    padding: 3rem 1rem;
+    margin-top: 2rem;
+  }
+  
+  .accordionButton {
+    padding: 1rem; /* Padding đủ rộng để bấm */
+  }
+
+  .buttonText {
+    font-size: 0.95rem; /* Chỉnh lại size chữ cho mobile dễ đọc */
+  }
+  
+  .sectionTitle {
+    margin-bottom: 0.5rem;
+  }
+}

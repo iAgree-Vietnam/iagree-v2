@@ -1,0 +1,524 @@
+{
+  "chats": [
+    {
+      "id": 1,
+      "job": {
+        "id": 123,
+        "name": "Dự án Kiểm thử Ứng dụng Banking",
+        "price": 4500000,
+        "description": "Kiểm thử toàn diện cho ứng dụng mobile banking với focus vào security testing, performance testing và user acceptance testing.",
+        "suggestion": "Tôi sẽ thực hiện functional testing, security penetration testing, performance load testing, và cross-platform compatibility testing. Bao gồm automated test suite và detailed bug reports.",
+        "suggestPrice": 4000000,
+        "startDate": "18/06/2025",
+        "endDate": "30/06/2025"
+      },
+      "partner": {
+        "id": 123,
+        "name": "Trung Cao",
+        "location": "P. Phú Thọ Hoà, TP. Hồ Chí Minh",
+        "joinDate": "Tháng 8/2020",
+        "language": "Tiếng Anh - Bản ngữ",
+        "sellerLevel": "Đánh giá cao",
+        "responseRate": "10 tiếng",
+        "jobPosition": "Senior QA Engineer",
+        "role": "partner",
+        "rating": 4.9,
+        "reviewCount": 673
+      },
+      "user": {
+        "id": 145,
+        "name": "Khách hàng 1"
+      },
+      "messages": [
+        {
+          "id": 1,
+          "side": "left",
+          "text": "Xin chào! Tôi rất quan tâm đến dự án banking app testing của bạn. Với 8 năm kinh nghiệm trong fintech testing, tôi đã làm việc với Wells Fargo, Chase, và nhiều ngân hàng lớn khác. Tôi có chứng chỉ CISA và CISSP.",
+          "userId": 123,
+          "timestamp": "19 Tháng 12, 2024, 5:02 chiều"
+        },
+        {
+          "id": 2,
+          "side": "right",
+          "text": "Tuyệt vời! Đây là một ứng dụng banking khá phức tạp với tính năng transfers, bill payments, investment tracking. Security là ưu tiên hàng đầu. Bạn có kinh nghiệm với PCI DSS compliance testing không?",
+          "userId": 145,
+          "timestamp": "19 Tháng 12, 2024, 5:05 chiều"
+        },
+        {
+          "id": 3,
+          "side": "left",
+          "text": "Chắc chắn rồi! Tôi đã thực hiện PCI DSS Level 1 compliance testing cho nhiều financial institutions. Tôi cũng có kinh nghiệm với OWASP security testing, penetration testing, và vulnerability assessments. Bạn có specific security requirements nào không?",
+          "userId": 123,
+          "timestamp": "19 Tháng 12, 2024, 5:07 chiều"
+        },
+        {
+          "id": 4,
+          "side": "right",
+          "text": "Perfect! App cần handle 100K+ concurrent users, integration với multiple payment gateways, và real-time fraud detection. Tôi cần comprehensive testing strategy bao gồm cả performance và security aspects.",
+          "userId": 145,
+          "timestamp": "19 Tháng 12, 2024, 5:10 chiều"
+        },
+        {
+          "id": 5,
+          "side": "left",
+          "text": "Tôi hiểu scope này rất well. Tôi sẽ sử dụng JMeter cho performance testing, OWASP ZAP cho security scanning, và Selenium Grid cho cross-browser testing. Deliverables bao gồm test strategy document, automated test suite, và detailed security assessment report. Giá $400 cho full scope.",
+          "userId": 123,
+          "timestamp": "19 Tháng 12, 2024, 5:15 chiều"
+        },
+        {
+          "id": 6,
+          "side": "right",
+          "text": "Cảm ơn bạn. Giá $400 có bao gồm hỗ trợ sau khi bàn giao không? Ví dụ như fix lỗi phát sinh hoặc điều chỉnh test scripts nếu app có cập nhật nhỏ?",
+          "userId": 145,
+          "timestamp": "19 Tháng 12, 2024, 5:17 chiều"
+        },
+        {
+          "id": 7,
+          "side": "left",
+          "text": "Tôi có thể hỗ trợ fix bugs và điều chỉnh scripts trong vòng 2 tuần sau khi bàn giao, miễn phí. Sau thời gian đó, nếu cần hỗ trợ thêm thì sẽ tính thêm phí nhỏ.",
+          "userId": 123,
+          "timestamp": "19 Tháng 12, 2024, 5:19 chiều"
+        },
+        {
+          "id": 8,
+          "side": "right",
+          "text": "Rất hợp lý. Thời gian để hoàn thành toàn bộ test strategy và automation là bao lâu?",
+          "userId": 145,
+          "timestamp": "19 Tháng 12, 2024, 5:21 chiều"
+        },
+        {
+          "id": 9,
+          "side": "left",
+          "text": "Tôi cần khoảng 7 ngày cho toàn bộ scope: 2 ngày viết chiến lược test, 3 ngày viết test scripts, 2 ngày chạy test và viết báo cáo.",
+          "userId": 123,
+          "timestamp": "19 Tháng 12, 2024, 5:23 chiều"
+        },
+        {
+          "id": 10,
+          "side": "right",
+          "text": "Ok. Bạn có NDA template không? Hoặc tôi có thể gửi form NDA để cả hai bên ký trước khi bắt đầu.",
+          "userId": 145,
+          "timestamp": "19 Tháng 12, 2024, 5:24 chiều"
+        },
+        {
+          "id": 11,
+          "side": "left",
+          "text": "Tôi có sẵn template NDA. Nhưng nếu bạn muốn dùng mẫu của bạn thì tôi vẫn ổn. Gửi tôi bản đó nhé.",
+          "userId": 123,
+          "timestamp": "19 Tháng 12, 2024, 5:26 chiều"
+        },
+        {
+          "id": 12,
+          "side": "right",
+          "text": "Đã gửi NDA form qua email rồi. Sau khi ký, chúng ta có thể bắt đầu ngay trong hôm nay không?",
+          "userId": 145,
+          "timestamp": "19 Tháng 12, 2024, 5:28 chiều"
+        },
+        {
+          "id": 13,
+          "side": "left",
+          "text": "Tôi đã nhận được, sẽ ký và gửi lại trong 15 phút tới. Sau đó tôi bắt đầu viết test plan ngay.",
+          "userId": 123,
+          "timestamp": "19 Tháng 12, 2024, 5:30 chiều"
+        },
+        {
+          "id": 14,
+          "side": "right",
+          "text": "Tốt quá. Tôi sẽ mở quyền truy cập staging app và gửi tài liệu API trong lúc đó.",
+          "userId": 145,
+          "timestamp": "19 Tháng 12, 2024, 5:32 chiều"
+        },
+        {
+          "id": 15,
+          "side": "left",
+          "text": "Đã nhận được staging URL và tài liệu. Mọi thứ rõ ràng. Tôi sẽ cập nhật tiến độ hàng ngày qua email hoặc ở đây.",
+          "userId": 123,
+          "timestamp": "19 Tháng 12, 2024, 5:35 chiều"
+        }
+      ],
+      "lastSeen": "19 tiếng trước",
+      "isOnline": true
+    },
+    {
+      "id": 8,
+      "job": {
+        "id": 230,
+        "name": "Dự án Kiểm thử E-learning Platform",
+        "price": 6500000,
+        "description": "Testing cho nền tảng học trực tuyến với video streaming, live classes, assignment submission, và payment integration.",
+        "suggestion": "Tôi sẽ thực hiện end-to-end testing, video streaming performance testing, load testing cho concurrent users, và mobile app testing. Bao gồm accessibility testing và user experience validation.",
+        "suggestPrice": 6000000,
+        "startDate": "25/06/2025",
+        "endDate": "08/07/2025"
+      },
+      "partner": {
+        "id": 8,
+        "name": "Huy Nguyễn",
+        "location": "P. Tân Phú, TP. Hồ Chí Minh",
+        "joinDate": "Tháng 1/2021",
+        "language": "Tiếng Anh - Thành thạo",
+        "sellerLevel": "Cấp độ 2",
+        "responseRate": "2 tiếng",
+        "jobPosition": "QA Automation Engineer",
+        "role": "partner",
+        "rating": 4.7,
+        "reviewCount": 234
+      },
+      "user": {
+        "id": 145,
+        "name": "Khách hàng 1"
+      },
+      "messages": [
+        {
+          "id": 1,
+          "side": "left",
+          "text": "Chào bạn! Tôi có 6 năm kinh nghiệm testing các education platforms như Coursera, Udemy. Tôi đặc biệt giỏi về video streaming testing, real-time communication testing, và scalability testing cho concurrent users.",
+          "userId": 8,
+          "timestamp": "18 Tháng 12, 2024, 3:15 chiều"
+        },
+        {
+          "id": 2,
+          "side": "right",
+          "text": "Tuyệt vời! Platform của tôi cần handle 50K students đồng thời, live streaming classes, interactive whiteboards, và real-time chat. Bạn có kinh nghiệm với WebRTC testing không?",
+          "userId": 145,
+          "timestamp": "18 Tháng 12, 2024, 3:20 chiều"
+        },
+        {
+          "id": 3,
+          "side": "left",
+          "text": "Có chắc chắn! Tôi đã test nhiều WebRTC applications cho video conferencing và live streaming. Tôi sử dụng tools như WebRTC Internals, Wireshark cho network analysis, và custom scripts để simulate concurrent connections. Bạn có specific performance requirements không?",
+          "userId": 8,
+          "timestamp": "18 Tháng 12, 2024, 3:25 chiều"
+        },
+        {
+          "id": 4,
+          "side": "right",
+          "text": "Platform cần support 4K video streaming, adaptive bitrate, và cross-platform compatibility (web, iOS, Android). Tôi cũng cần testing cho assignment submission system, grading workflows, và payment processing.",
+          "userId": 145,
+          "timestamp": "18 Tháng 12, 2024, 3:30 chiều"
+        },
+        {
+          "id": 5,
+          "side": "left",
+          "text": "Perfect scope! Tôi sẽ setup comprehensive test environment với multiple devices, network conditions simulation, và automated regression suite. Tôi cũng có experience với Stripe/PayPal testing và file upload/download performance testing. Timeline 2 tuần với giá $600 reasonable không?",
+          "userId": 8,
+          "timestamp": "18 Tháng 12, 2024, 3:35 chiều"
+        }
+      ],
+      "lastSeen": "2 tiếng trước",
+      "isOnline": false
+    },
+    {
+      "id": 14,
+      "job": {
+        "id": 923,
+        "name": "Dự án Kiểm thử Healthcare Management System",
+        "price": 1200000,
+        "description": "Testing cho hệ thống quản lý bệnh viện với patient records, appointment scheduling, telemedicine, và HIPAA compliance requirements.",
+        "suggestion": "Tôi sẽ thực hiện comprehensive testing bao gồm HIPAA compliance validation, data security testing, integration testing với medical devices, và performance testing cho large datasets. Có kinh nghiệm với HL7 FHIR standards.",
+        "suggestPrice": 1100000,
+        "startDate": "02/07/2025",
+        "endDate": "30/07/2025"
+      },
+      "partner": {
+        "id": 68,
+        "name": "Tâm Trần",
+        "location": "X. Thanh Oai, TP. Hà Nội",
+        "joinDate": "Tháng 3/2019",
+        "language": "Tiếng Anh - Bản ngữ",
+        "sellerLevel": "Đánh giá cao Plus",
+        "responseRate": "1 tiếng",
+        "jobPosition": "Healthcare QA Specialist",
+        "role": "partner",
+        "rating": 4.8,
+        "reviewCount": 892
+      },
+      "user": {
+        "id": 145,
+        "name": "Khách hàng 1"
+      },
+      "messages": [
+        {
+          "id": 1,
+          "side": "left",
+          "text": "Chào bạn! Tôi có 10+ năm kinh nghiệm testing healthcare systems cho NHS, Kaiser Permanente, và Mayo Clinic. Tôi am hiểu về HIPAA, GDPR compliance, và có chứng chỉ Certified Healthcare Privacy Security (CHPS).",
+          "userId": 68,
+          "timestamp": "17 Tháng 12, 2024, 10:30 sáng"
+        },
+        {
+          "id": 2,
+          "side": "right",
+          "text": "Excellent! Đây là một comprehensive hospital management system với patient portal, doctor scheduling, telemedicine, pharmacy integration, và billing system. HIPAA compliance là critical requirement. Bạn có kinh nghiệm với HL7 FHIR testing không?",
+          "userId": 145,
+          "timestamp": "17 Tháng 12, 2024, 10:45 sáng"
+        },
+        {
+          "id": 3,
+          "side": "left",
+          "text": "Tôi đã implement HL7 FHIR R4 testing frameworks và có deep knowledge về medical data interoperability. Tôi cũng có experience testing integration với medical devices (ECG, X-ray systems) và pharmacy management systems như Epic, Cerner.",
+          "userId": 68,
+          "timestamp": "17 Tháng 12, 2024, 11:00 sáng"
+        },
+        {
+          "id": 4,
+          "side": "right",
+          "text": "Perfect match! System cần handle 500K+ patient records, real-time vital signs monitoring, prescription management, và insurance claims processing. Security và data privacy là top priorities. Bạn có thể handle scope này không?",
+          "userId": 145,
+          "timestamp": "17 Tháng 12, 2024, 11:15 sáng"
+        },
+        {
+          "id": 5,
+          "side": "left",
+          "text": "Chắc chắn! Tôi sẽ create comprehensive test strategy covering functional testing, security penetration testing, HIPAA audit trails validation, performance testing với large datasets, và disaster recovery testing. Deliverables include compliance certification report. Giá $1100 cho full scope.",
+          "userId": 68,
+          "timestamp": "17 Tháng 12, 2024, 11:30 sáng"
+        }
+      ],
+      "lastSeen": "1 ngày trước",
+      "isOnline": false
+    },
+    {
+      "id": 25,
+      "job": {
+        "id": 445,
+        "name": "Dự án Thiết kế UI/UX",
+        "price": 800000,
+        "description": "Thiết kế giao diện người dùng cho ứng dụng mobile banking với focus vào user experience và accessibility.",
+        "suggestion": "Tôi sẽ tạo ra một design system hoàn chỉnh với wireframes, mockups, và interactive prototypes. Bao gồm cả user research và usability testing.",
+        "suggestPrice": 750000,
+        "startDate": "15/07/2025",
+        "endDate": "15/08/2025"
+      },
+      "partner": {
+        "id": 89,
+        "name": "Minh Phạm",
+        "location": "P. Quế Võ, Tỉnh Bắc Ninh",
+        "joinDate": "Tháng 6/2020",
+        "language": "Tiếng Anh - Thành thạo",
+        "sellerLevel": "Cấp độ 3",
+        "responseRate": "30 phút",
+        "jobPosition": "Senior UI/UX Designer",
+        "role": "partner",
+        "rating": 4.9,
+        "reviewCount": 456
+      },
+      "user": {
+        "id": 145,
+        "name": "Khách hàng 1"
+      },
+      "messages": [
+        {
+          "id": 1,
+          "side": "left",
+          "text": "Chào bạn! Tôi rất hứng thú với dự án mobile banking của bạn. Tôi có 5+ năm kinh nghiệm thiết kế cho fintech apps và đã làm việc với nhiều ngân hàng lớn ở Singapore.",
+          "userId": 89,
+          "timestamp": "16 Tháng 12, 2024, 2:15 chiều"
+        },
+        {
+          "id": 2,
+          "side": "right",
+          "text": "Tuyệt vời! Tôi đang tìm một designer có kinh nghiệm thực tế với financial apps. Bạn có thể show tôi một số portfolio pieces không?",
+          "userId": 145,
+          "timestamp": "16 Tháng 12, 2024, 2:20 chiều"
+        },
+        {
+          "id": 3,
+          "side": "left",
+          "text": "Tất nhiên! Tôi sẽ gửi link portfolio qua email. Một số highlights: redesign DBS mobile app (tăng 40% user engagement), thiết kế OCBC investment platform, và UOB digital wallet interface. Tất cả đều focus vào security và ease of use.",
+          "userId": 89,
+          "timestamp": "16 Tháng 12, 2024, 2:25 chiều"
+        },
+        {
+          "id": 4,
+          "side": "right",
+          "text": "Impressive! Đây chính xác là kinh nghiệm tôi cần. App của tôi cần handle các tính năng như transfers, bill payments, investment tracking. UX phải rất intuitive vì target users đa dạng về độ tuổi.",
+          "userId": 145,
+          "timestamp": "16 Tháng 12, 2024, 2:30 chiều"
+        },
+        {
+          "id": 5,
+          "side": "left",
+          "text": "Perfect match! Tôi specialise trong inclusive design và accessibility. Tôi sẽ conduct user interviews, create personas, design information architecture, và deliver high-fidelity prototypes. Timeline 1 tháng với giá $750 có phù hợp không?",
+          "userId": 89,
+          "timestamp": "16 Tháng 12, 2024, 2:35 chiều"
+        },
+        {
+          "id": 6,
+          "side": "right",
+          "text": "Sounds great! Tôi muốn schedule một call để discuss chi tiết hơn về requirements và timeline. Bạn có available vào tuần tới không?",
+          "userId": 145,
+          "timestamp": "16 Tháng 12, 2024, 2:40 chiều"
+        }
+      ],
+      "lastSeen": "5 tiếng trước",
+      "isOnline": true
+    },
+    {
+      "id": 32,
+      "job": {
+        "id": 667,
+        "name": "Dự án Phát triển Website E-commerce",
+        "price": 12000000,
+        "description": "Xây dựng website bán hàng online hoàn chỉnh với tính năng thanh toán, quản lý inventory, và admin dashboard.",
+        "suggestion": "Tôi sẽ sử dụng React.js cho frontend, Node.js/Express cho backend, và MongoDB cho database. Bao gồm responsive design, SEO optimization, và integration với payment gateways.",
+        "suggestPrice": 11500000,
+        "startDate": "01/08/2025",
+        "endDate": "30/09/2025"
+      },
+      "partner": {
+        "id": 156,
+        "name": "Đức Lê",
+        "location": "X. Tiên Tiến, Tỉnh Hưng Yên",
+        "joinDate": "Tháng 2/2019",
+        "language": "Tiếng Việt - Bản ngữ",
+        "sellerLevel": "Chuyên gia",
+        "responseRate": "15 phút",
+        "jobPosition": "Full-stack Developer",
+        "role": "partner",
+        "rating": 4.8,
+        "reviewCount": 789
+      },
+      "user": {
+        "id": 145,
+        "name": "Khách hàng 1"
+      },
+      "messages": [
+        {
+          "id": 1,
+          "side": "left",
+          "text": "Xin chào! Tôi đã đọc requirements cho dự án e-commerce của bạn. Với 6 năm kinh nghiệm full-stack development, tôi đã build hơn 20 e-commerce websites với các tính năng tương tự.",
+          "userId": 156,
+          "timestamp": "15 Tháng 12, 2024, 9:00 sáng"
+        },
+        {
+          "id": 2,
+          "side": "right",
+          "text": "Chào bạn Đức! Tôi cần một website khá comprehensive với nhiều features. Bạn có kinh nghiệm với payment integration và inventory management không?",
+          "userId": 145,
+          "timestamp": "15 Tháng 12, 2024, 9:05 sáng"
+        },
+        {
+          "id": 3,
+          "side": "left",
+          "text": "Chắc chắn rồi! Tôi đã integrate với VNPay, MoMo, Stripe, PayPal. Về inventory management, tôi có thể build system theo dõi stock real-time, automatic reorder alerts, và detailed analytics. Bạn có specific requirements nào khác không?",
+          "userId": 156,
+          "timestamp": "15 Tháng 12, 2024, 9:10 sáng"
+        },
+        {
+          "id": 4,
+          "side": "right",
+          "text": "Tuyệt vời! Tôi cần thêm tính năng multi-vendor (như Shopee), review system, wishlist, và mobile app responsive. Bạn có thể handle được scope này không?",
+          "userId": 145,
+          "timestamp": "15 Tháng 12, 2024, 9:15 sáng"
+        },
+        {
+          "id": 5,
+          "side": "left",
+          "text": "Multi-vendor platform là specialty của tôi. Tôi sẽ build separate dashboards cho vendors, commission system, và dispute resolution. Mobile-first approach với PWA capabilities. Timeline 2 tháng, giá $1150 cho full package.",
+          "userId": 156,
+          "timestamp": "15 Tháng 12, 2024, 9:20 sáng"
+        },
+        {
+          "id": 6,
+          "side": "right",
+          "text": "Giá cả hợp lý! Bạn có thể cung cấp detailed project timeline và milestones không? Tôi muốn track progress regularly.",
+          "userId": 145,
+          "timestamp": "15 Tháng 12, 2024, 9:25 sáng"
+        },
+        {
+          "id": 7,
+          "side": "left",
+          "text": "Tất nhiên! Tôi sẽ chia thành 4 phases: 1) Database design & API development (2 tuần), 2) Frontend core features (3 tuần), 3) Payment & vendor features (2 tuần), 4) Testing & deployment (1 tuần). Weekly progress reports included!",
+          "userId": 156,
+          "timestamp": "15 Tháng 12, 2024, 9:30 sáng"
+        }
+      ],
+      "lastSeen": "1 tiếng trước",
+      "isOnline": false
+    },
+
+    {
+      "id": 588,
+      "job": {
+        "id": 261236123,
+        "name": "Dự án Phát triển Website E-commerce",
+        "price": 12000000,
+        "description": "Xây dựng website bán hàng online hoàn chỉnh với tính năng thanh toán, quản lý inventory, và admin dashboard.",
+        "suggestion": "Tôi sẽ sử dụng React.js cho frontend, Node.js/Express cho backend, và MongoDB cho database. Bao gồm responsive design, SEO optimization, và integration với payment gateways.",
+        "suggestPrice": 11500000,
+        "startDate": "01/08/2025",
+        "endDate": "30/09/2025"
+      },
+      "partner": {
+        "id": 157,
+        "name": "Lê Cao",
+        "location": "P. Mỹ Lâm, Tỉnh Tuyên Quang",
+        "joinDate": "Tháng 2/2020",
+        "language": "Tiếng Việt - Bản ngữ",
+        "sellerLevel": "Chuyên gia",
+        "responseRate": "30 phút",
+        "jobPosition": "Specialist HR",
+        "role": "client",
+        "rating": 4.8,
+        "reviewCount": 789
+      },
+      "user": {
+        "id": 145,
+        "name": "Khách hàng 1"
+      },
+      "messages": [
+        {
+          "id": 1,
+          "side": "left",
+          "text": "Xin chào! Tôi đã đọc requirements cho dự án e-commerce của bạn. Với 6 năm kinh nghiệm full-stack development, tôi đã build hơn 20 e-commerce websites với các tính năng tương tự.",
+          "userId": 157,
+          "timestamp": "15 Tháng 12, 2024, 9:00 sáng"
+        },
+        {
+          "id": 2,
+          "side": "right",
+          "text": "Chào bạn Đức! Tôi cần một website khá comprehensive với nhiều features. Bạn có kinh nghiệm với payment integration và inventory management không?",
+          "userId": 145,
+          "timestamp": "15 Tháng 12, 2024, 9:05 sáng"
+        },
+        {
+          "id": 3,
+          "side": "left",
+          "text": "Chắc chắn rồi! Tôi đã integrate với VNPay, MoMo, Stripe, PayPal. Về inventory management, tôi có thể build system theo dõi stock real-time, automatic reorder alerts, và detailed analytics. Bạn có specific requirements nào khác không?",
+          "userId": 157,
+          "timestamp": "15 Tháng 12, 2024, 9:10 sáng"
+        },
+        {
+          "id": 4,
+          "side": "right",
+          "text": "Tuyệt vời! Tôi cần thêm tính năng multi-vendor (như Shopee), review system, wishlist, và mobile app responsive. Bạn có thể handle được scope này không?",
+          "userId": 145,
+          "timestamp": "15 Tháng 12, 2024, 9:15 sáng"
+        },
+        {
+          "id": 5,
+          "side": "left",
+          "text": "Multi-vendor platform là specialty của tôi. Tôi sẽ build separate dashboards cho vendors, commission system, và dispute resolution. Mobile-first approach với PWA capabilities. Timeline 2 tháng, giá $1150 cho full package.",
+          "userId": 157,
+          "timestamp": "15 Tháng 12, 2024, 9:20 sáng"
+        },
+        {
+          "id": 6,
+          "side": "right",
+          "text": "Giá cả hợp lý! Bạn có thể cung cấp detailed project timeline và milestones không? Tôi muốn track progress regularly.",
+          "userId": 145,
+          "timestamp": "15 Tháng 12, 2024, 9:25 sáng"
+        },
+        {
+          "id": 7,
+          "side": "left",
+          "text": "Tất nhiên! Tôi sẽ chia thành 4 phases: 1) Database design & API development (2 tuần), 2) Frontend core features (3 tuần), 3) Payment & vendor features (2 tuần), 4) Testing & deployment (1 tuần). Weekly progress reports included!",
+          "userId": 157,
+          "timestamp": "15 Tháng 12, 2024, 9:30 sáng"
+        }
+      ],
+      "lastSeen": "1 tiếng trước",
+      "isOnline": false
+    }
+  ]
+}

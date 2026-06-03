@@ -1,0 +1,317 @@
+/* PartnerConnectionSection.module.css */
+
+.sectionContainer {
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 6rem;
+}
+
+.contentWrapper {
+    width: 100%;
+    max-width: 1400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 5rem;
+}
+
+.mainTitle {
+    color: #09993E !important;
+    font-size: clamp(2rem, 5vw, 2.5rem) !important;
+    font-weight: 700 !important;
+    margin-top: 5rem !important;
+    text-align: center;
+}
+
+/* -------------------- NEW INTRO CONTAINER -------------------- */
+.introContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* Chia thành 2 cột đều nhau */
+    padding: 3rem 0rem;
+    width: 100%;
+    max-width: 1395px;
+    /* Giống stackingContainer để căn chỉnh */
+    margin-bottom: 3rem;
+}
+
+.introLeft {
+    color: #c7c7c7;
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-align: left;
+    display: flex;
+    align-items: center;
+}
+
+.introRight {
+    color: #000;
+    font-size: clamp(1.2rem, 4.2vw, 2.2rem) !important;
+    font-weight: 600;
+    text-align: right;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+/* -------------------- STACKING CARDS CONTAINER -------------------- */
+.stackingContainer {
+    width: 100%;
+    max-width: 1400px;
+    position: relative;
+}
+
+/* -------------------- NORMAL LIST LAYOUT -------------------- */
+.cardsList {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+/* -------------------- STACKING EFFECT CARDS -------------------- */
+.stackingCard {
+    position: sticky;
+    top: 10vh;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    padding: 1.5rem 0rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgb(233, 232, 232);
+    z-index: 1;
+}
+
+/* Each subsequent card should have higher z-index */
+.stackingCard:nth-child(1) {
+    z-index: 1;
+}
+
+.stackingCard:nth-child(2) {
+    z-index: 2;
+}
+
+.stackingCard:nth-child(3) {
+    z-index: 3;
+}
+
+.stackingCard:nth-child(4) {
+    z-index: 4;
+}
+
+.stackingCard:nth-child(5) {
+    z-index: 5;
+}
+
+.stackingCard:nth-child(6) {
+    z-index: 6;
+}
+
+.stackingCard:nth-child(7) {
+    z-index: 7;
+}
+
+.stackingCard:nth-child(8) {
+    z-index: 8;
+}
+
+
+/* Card content - New 3-column layout */
+.cardContent {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2rem;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+}
+
+/* Left column - Number and Title */
+.cardLeft {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+}
+
+.cardNumber {
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(45deg, #09993E, #39B633);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.cardTitle {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #2c3e50;
+    text-align: left;
+}
+
+/* Middle column - Description */
+.cardMiddle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cardDescription {
+    font-size: 1.1rem;
+    color: #6c757d;
+    line-height: 1.5;
+    text-align: center;
+}
+
+/* Right column - Image */
+.cardRight {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cardImage {
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+/* Remove old icon styles */
+.cardIcon {
+    display: none;
+}
+
+/* -------------------- TABLET RESPONSIVE -------------------- */
+@media (max-width: 1200px) {
+    .stackingCard {
+        top: 10vh;
+    }
+
+    .cardContent {
+        grid-template-columns: 1fr 1.5fr 1fr;
+        gap: 1rem;
+    }
+
+    .cardNumber {
+        font-size: 1.8rem;
+    }
+
+    .cardTitle {
+        font-size: 1.2rem;
+    }
+
+    .cardDescription {
+        font-size: 1.0rem;
+    }
+}
+
+/* -------------------- MOBILE RESPONSIVE -------------------- */
+@media (max-width: 768px) {
+    .introContainer {
+        grid-template-columns: 1fr;
+        /* Chuyển thành 1 cột trên di động */
+        text-align: center;
+    }
+
+    .introLeft {
+        color: #09993E;
+        /* Đổi màu chữ */
+        justify-content: center;
+        /* Căn giữa nội dung */
+        text-align: center;
+        /* Căn giữa văn bản */
+        margin-bottom: 0.5rem;
+    }
+
+    .introRight {
+        justify-content: center;
+        /* Căn giữa nội dung */
+        text-align: center;
+        /* Căn giữa văn bản */
+    }
+
+    .stackingCard {
+        top: 10vh;
+        height: auto;
+    }
+
+    .cardContent {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1.5rem;
+    }
+
+    .cardLeft,
+    .cardMiddle,
+    .cardRight {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        width: 100%;
+    }
+
+    .cardNumber {
+        font-size: 2.5rem;
+    }
+
+    .cardTitle {
+        font-size: 1.4rem;
+        text-align: center;
+    }
+
+    .cardMiddle {
+        padding: 0;
+    }
+
+    .cardDescription {
+        font-size: 0.9rem;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .stackingCard {
+        height: auto;
+    }
+
+    .cardContent {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .cardLeft,
+    .cardMiddle,
+    .cardRight {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        width: 100%;
+    }
+
+    .cardTitle {
+        font-size: 1.2rem;
+    }
+
+    .cardNumber {
+        font-size: 2rem;
+    }
+
+    .cardDescription {
+        font-size: 0.8rem;
+    }
+}

@@ -1,0 +1,130 @@
+.teamSection {
+  padding: 6rem 3rem;
+  color: #333;
+  overflow: hidden; 
+  text-align: center;
+  position: relative;
+  background-color: #fff;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.sectionTitle {
+  font-size: clamp(1.5rem, 5vw, 2.5rem) !important;
+  font-weight: 700;
+  color: #333; 
+  line-height: 1.2;
+  margin-bottom: 3rem;
+}
+
+.textGreen {
+  color: #09993E; 
+}
+
+.teamGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.partnerCard {
+  background: #fff; /* Phối gradient từ xanh lá cây sang xanh dương */
+  border: 1px solid rgba(220, 220, 220, 1);
+  border-radius: 12px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  backdrop-filter: blur(5px);
+  transition: transform 0.3s ease, background-color 0.3s ease, border 0.3s ease;
+  cursor: pointer;
+  height: 100%;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Adjusted for dark shadow on light bg */
+  justify-content: space-between;
+}
+
+.partnerCard:hover {
+  transform: scale(1.05);
+  background: linear-gradient(to top left, #0ab047, #4CAF50); /* Đảo ngược hướng gradient khi hover */
+}
+
+.partnerCard:hover .partnerName {
+  color: #fff; /* Change color to white on hover */
+}
+
+.partnerCard:hover .partnerPosition {
+  color: #dedede; /* Change color to white on hover */
+}
+
+.partnerImage {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Adjusted for dark shadow on light bg */
+  transition: transform 0.2s ease;
+}
+
+.partnerCard:hover .partnerImage {
+  transform: scale(1.1);
+}
+
+.partnerImage img {
+  object-fit: cover !important;
+  width: 100%;
+  height: 100%;
+}
+
+.partnerInfo {
+  margin-top: 1rem;
+  width: 100%;
+  max-width: 100%;
+}
+
+.partnerName {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #333;
+  margin: 0 auto;
+  transition: color 0.3s ease; /* Add transition for a smooth color change */
+  /* Text truncation properties */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+  max-width: 100%; /* Adjust this value based on your card width */
+}
+
+.partnerPosition {
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: grey;
+  margin: 0 auto;
+  transition: color 0.3s ease;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+  max-width: 100%;
+}
+
+@media (max-width: 768px) {
+  .sectionTitle {
+    font-size: 2rem;
+  }
+  .teamGrid {
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .teamGrid {
+    gap: 1rem;
+  }
+}

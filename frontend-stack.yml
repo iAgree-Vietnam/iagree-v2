@@ -1,0 +1,100 @@
+version: "3.8"
+
+services:
+  v2-frontend:
+    image: v2-frontend:latest
+
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+      - TZ=Asia/Ho_Chi_Minh
+
+    networks:
+      - iagree
+
+    deploy:
+      mode: replicated
+      replicas: 5
+
+      # Rolling update
+      update_config:
+        parallelism: 2
+        delay: 10s
+        order: start-first
+        failure_action: rollback
+        monitor: 30s
+
+      # Restart policy
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 3
+        window: 120s
+
+      # Resource limits
+      resources:
+        limits:
+          cpus: "1.4"
+          memory: 1.4G
+        reservations:
+          cpus: "0.7"
+          memory: 700M
+
+      labels:
+        - "traefik.enable=true"
+        - "traefik.docker.network=iagree"
+
+        # ============================
+        # 🔁 HTTP -> HTTPS REDIRECT
+        # ============================
+        - "traefik.http.routers.v2-frontend.entrypoints=http"
+        - "traefik.http.routers.v2-frontend.rule=Host(`iagree.asia`)"
+        - "traefik.http.routers.v2-frontend.middlewares=v2-frontend-https-redirect"
+        - "traefik.http.middlewares.v2-frontend-https-redirect.redirectscheme.scheme=https"
+
+        # ============================
+        # 🔐 HTTPS ROUTER
+        # ============================
+        - "traefik.http.routers.v2-frontend-secure.entrypoints=https"
+        - "traefik.http.routers.v2-frontend-secure.rule=Host(`iagree.asia`)"
+        - "traefik.http.routers.v2-frontend-secure.tls=true"
+        - "traefik.http.routers.v2-frontend-secure.tls.certresolver=letsencrypt"
+        - "traefik.http.routers.v2-frontend-secure.service=v2-frontend"
+
+        # ============================
+        # ⚡ LOAD BALANCER CONFIG
+        # ============================
+        - "traefik.http.services.v2-frontend.loadbalancer.server.port=3000"
+        - "traefik.http.services.v2-frontend.loadbalancer.passhostheader=true"
+
+        # Sticky Session
+        - "traefik.http.services.v2-frontend.loadbalancer.sticky.cookie=true"
+        - "traefik.http.services.v2-frontend.loadbalancer.sticky.cookie.name=iagree_session"
+
+        # Compression
+        - "traefik.http.middlewares.v2-frontend-compress.compress=true"
+        - "traefik.http.middlewares.v2-frontend-compress.compress.minresponsebodybytes=1400"
+
+        # Cache static
+        - "traefik.http.middlewares.v2-frontend-headers.headers.customresponseheaders.Cache-Control=public, max-age=31536000, immutable"
+
+        # Security headers
+        - "traefik.http.middlewares.v2-frontend-sec.headers.framedeny=true"
+        - "traefik.http.middlewares.v2-frontend-sec.headers.browserxssfilter=true"
+        - "traefik.http.middlewares.v2-frontend-sec.headers.contenttypenosniff=true"
+        - "traefik.http.middlewares.v2-frontend-sec.headers.referrerpolicy=no-referrer-when-downgrade"
+        - "traefik.http.middlewares.v2-frontend-sec.headers.permissionspolicy=accelerometer=(), camera=(), geolocation=()"
+
+        # Rate limit
+        - "traefik.http.middlewares.v2-frontend-ratelimit.ratelimit.average=200"
+        - "traefik.http.middlewares.v2-frontend-ratelimit.ratelimit.burst=100"
+
+        # Timeouts
+        - "traefik.http.services.v2-frontend.loadbalancer.responseforwarding.flushinterval=100ms"
+
+        # Gắn middlewares vào HTTPS router
+        - "traefik.http.routers.v2-frontend-secure.middlewares=v2-frontend-compress,v2-frontend-sec,v2-frontend-headers,v2-frontend-ratelimit"
+
+networks:
+  iagree:
+    external: true

@@ -1,0 +1,108 @@
+.partnersSection {
+  padding: 0 2rem;
+  background-color: #fff;
+  margin-top: 2rem;
+}
+
+.partnersContainer {
+  max-width: 1400px;
+  margin: 0 auto;
+  border: 1px solid #e4e4e6;
+  text-align: center;
+  padding: 2rem 0;
+  border-radius: 16px;
+}
+
+.mainTitle {
+  text-align: center;
+  color: #09993E;
+  font-size: clamp(1.5rem, 5vw, 2.5rem) !important;
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
+
+.partnersTitle {
+  font-size: clamp(1.5rem, 5vw, 2.5rem) !important;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 3rem;
+}
+
+.greenText {
+  color: #09993E;
+}
+
+.partnerLogoWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 150px;
+  padding: 1rem;
+}
+
+.logo {
+  margin-left: 5px;
+}
+
+/* === GRID (desktop & tablet) === */
+.partnersGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Tablet */
+@media (max-width: 1000px) {
+  .partnersGrid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.8rem;
+  }
+}
+
+/* Tablet nhỏ (<=768px) => dùng marquee thay vì grid */
+@media (max-width: 768px) {
+  .partnersTitle {
+    margin-bottom: 1.5rem;
+  }
+
+  .partnersGrid {
+    display: none; /* Ẩn grid */
+  }
+
+  .marquee {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+  }
+
+  .marqueeContent {
+    display: flex;
+    gap: 2rem;
+    width: max-content;
+    animation: marqueeScroll 20s linear infinite;
+  }
+
+  .marqueeContent:hover {
+    animation-play-state: paused; /* Nếu muốn dừng khi hover, có thể bỏ đi */
+  }
+
+  @keyframes marqueeScroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+}
+
+/* Mobile nhỏ (<=480px) */
+@media (max-width: 480px) {
+  .marqueeContent {
+    gap: 1rem; /* Thu hẹp khoảng cách */
+    animation-duration: 15s; /* Nhanh hơn cho màn nhỏ */
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "extends": "next/core-web-vitals",
+  "rules": {
+    "react/no-unescaped-entities": 0,
+    "@next/next/no-img-element": 0,
+    "import/no-anonymous-default-export": 0
+    // "no-unused-vars": ["error", { "vars": "all", "args": "none", "ignoreRestSiblings": false }],
+    // "import/no-unused-modules": [2, { "unusedExports": true }],
+    // "no-console": ["error", { "allow": ["warn", "error"] }],
+    // "no-debugger": "error",
+    // "eqeqeq": ["error", "always"],
+    // "prefer-const": "error",
+    // "no-empty-function": "error"
+  }
+}

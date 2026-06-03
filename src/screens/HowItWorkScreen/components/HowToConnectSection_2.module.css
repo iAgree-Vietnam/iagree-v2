@@ -1,0 +1,220 @@
+/* HowToConnectSection.module.css */
+
+.sectionContainer {
+    background-color: #fff;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contentWrapper {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 5rem;
+}
+
+.mainTitle {
+    color: #09993E !important;
+    font-size: clamp(1.5rem, 5vw, 2.5rem) !important;
+    font-weight: 700 !important;
+    margin-bottom: 0.5rem !important;
+}
+
+.subTitle {
+    color: #09993E !important;
+    font-size: clamp(1rem, 3vw, 1.5rem) !important;
+    font-weight: 500 !important;
+    margin-bottom: 3rem !important;
+}
+
+.flipIconHorizontallyRedo {
+    transform: scaleY(-1);
+    margin-left: auto;
+}
+
+.flipIconHorizontally {
+    transform: scale(1, -1) rotate(-0deg);
+    transform-origin: center center;
+    height: 60px;
+    width: 60px;
+    margin-left: 15rem;
+    fill: #09993E;
+}
+
+.flipIconHorizontally2 {
+    transform: scale(-1, 1) rotate(-90deg);
+    transform-origin: center center;
+    height: 60px;
+    width: 60px;
+    margin-right: 15rem;
+    fill: #09993E;
+}
+
+/* -------------------- DESKTOP LAYOUT -------------------- */
+.desktopLayout {
+    display: flex;
+    justify-content: flex-start;
+    align-items: stretch;
+    gap: 0.5rem;
+    margin-left: 3rem;
+}
+
+.leftColumn,
+.rightColumn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    max-width: 280px;
+    min-width: 220px;
+}
+
+.stepWrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    width: 100%;
+}
+
+.stepWrapperCenter {
+    /* Đảm bảo khối này không bị ảnh hưởng bởi margin-bottom của các step khác */
+    margin-top: 12rem; /* Thêm khoảng cách với khối trên */
+    max-width: 280px; /* Giữ kích thước nhất quán */
+}
+
+.step {
+    background-color: #000;
+    color: #fff;
+    border-radius: 50px;
+    padding: 1rem 1.5rem 1rem 3.5rem;
+    width: 100%;
+    text-align: match-parent;
+    display: flex;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.step:hover {
+    transform: scale(1.05);
+}
+
+.stepNumber {
+    background-color: #fff;
+    border: 1px solid grey;
+    color: #000;
+    font-weight: 700;
+    font-size: 1.3rem;
+    border-radius: 50%;
+    min-width: 70px;
+    min-height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: -20px;
+    z-index: 1;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.stepContent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 45px;
+    text-align: center;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+}
+
+.stepText {
+    font-size: 1.1rem;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+.centerFlow {
+    max-width: 280px; /* Giảm bên giữa */
+    display: flex;
+    color: #09993E;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.centerBox {
+    background: linear-gradient(135deg, #39B633, #0E5E26);
+    color: #fff;
+    border-radius: 12px;
+    padding: 1.5rem;
+    font-size: 1.2rem;
+    width: 100%;
+    max-width: 250px;
+    text-align: center;
+    font-weight: 600;
+    line-height: 1.4;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* -------------------- MOBILE/TABLET LAYOUT -------------------- */
+.flowchartContainerMobile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 0 1rem;
+}
+
+.stepWrapperMobile {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 350px;
+}
+
+.stepMobile {
+    background-color: #000;
+    color: #fff;
+    border-radius: 50px;
+    padding: 1rem 1rem 1rem 3.5rem;
+    width: 100%;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.stepMobile:hover {
+    transform: scale(1.05);
+}
+
+.stepNumberMobile {
+    background-color: #fff;
+    border: 1px solid grey;
+    color: #000;
+    font-weight: 700;
+    font-size: 1.2rem;
+    border-radius: 50%;
+    min-width: 70px;
+    min-height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 0;
+    transform: translateX(-50%);
+    z-index: 1;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.mobileArrow {
+    margin: 0.5rem 0;
+}

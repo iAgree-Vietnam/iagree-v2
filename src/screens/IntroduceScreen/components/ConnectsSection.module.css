@@ -1,0 +1,164 @@
+.sectionContainer {
+  padding: 5rem 0rem;
+  background-color: #fff;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.greenText {
+  color: #09993E;
+}
+
+.header {
+  max-width: 800px;
+  margin: 0 auto 4rem;
+  text-align: left;
+}
+
+.subTitle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.subTitleIcon {
+  width: 20px;
+  height: 20px;
+  background-color: #e0e7ee;
+  border-radius: 50%;
+  border: 1px solid #d1d5db;
+}
+
+.subTitleText {
+  color: #555;
+  font-weight: 500;
+  margin: 0;
+}
+
+.mainTitle {
+  font-size: clamp(1.5rem, 5vw, 2.5rem) !important;
+  font-weight: 700;
+  color: #000;
+  line-height: 1.2;
+  margin-bottom: 0rem;
+}
+
+.description {
+  font-size: 1rem;
+  color: #4a5568;
+}
+
+.gridContainer {
+  margin: 0 auto;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 2.5rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+  height: 100%;
+}
+
+.headerContentWrapper {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.0rem;
+}
+
+.iconWrapper {
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.6rem;
+}
+
+.statIcon {
+  width: 40px;
+  height: 40px;
+}
+
+.cardTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1a202c;
+  margin: 0;
+}
+
+.cardDescription {
+  font-size: 1rem;
+  color: #4a5568;
+  line-height: 1.5;
+}
+
+@media (max-width: 1200px) {
+  .header {
+    max-width: 800px;
+    margin: 0 auto 4rem;
+    text-align: center;
+  }
+}
+/* Responsive */
+@media (max-width: 768px) {
+  .sectionContainer {
+    padding: 4rem 0rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 6rem;
+  }
+
+  .header {
+    flex: 1;
+    max-width: none;
+    margin-bottom: 0;
+    position: sticky;
+    top: 90px;
+    z-index: 10;
+    background-color: #fff;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  .gridContainer {
+    flex: 1;
+    max-width: none;
+    margin: 0;
+  }
+}
+
+/* Các styles mới cho danh sách và text */
+.bulletList {
+  list-style-type: disc;
+  padding-left: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.subList {
+  list-style-type: none;
+  padding-left: 20px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.strongText {
+  font-weight: 700;
+}

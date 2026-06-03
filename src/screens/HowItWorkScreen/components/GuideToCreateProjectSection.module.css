@@ -1,0 +1,150 @@
+/* GuideToCreateProjectSection.module.css */
+
+.sectionContainer {
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5rem;
+}
+
+.contentWrapper {
+    width: 100%;
+    max-width: 1400px;
+    padding-bottom: 3rem;
+}
+
+.mainTitle {
+    color: #09993E !important;
+    font-size: clamp(2rem, 5vw, 2.5rem) !important;
+    font-weight: 700 !important;
+    margin-bottom: 3rem !important;
+    text-align: center;
+}
+
+/* Progress Bar and Steps */
+.progressBarWrapper {
+    margin-bottom: 2rem;
+}
+
+.progressBar {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.step {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.stepIcon {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #e0e0e0;
+    color: #888;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.stepText {
+    color: #888;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.activeIcon {
+    background-color: #09993E;
+    color: #fff;
+}
+
+.activeText {
+    color: #09993E !important;
+}
+
+/* Form and Video */
+.formAndVideoContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 3rem;
+    margin-top: 3rem;
+}
+
+.formContent {
+    flex: 1;
+}
+
+.formItem {
+    margin-bottom: 1rem;
+}
+
+.inputField,
+.textArea {
+    border-color: #ddd !important;
+    border-radius: 8px !important;
+}
+
+.inputField:focus,
+.textArea:focus {
+    box-shadow: none !important;
+    border-color: #09993E !important;
+}
+
+.videoContent {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.videoPlayerWrapper {
+    width: 100%;
+    position: relative;
+    padding-top: 56.25%;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.reactPlayer {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+@media (max-width: 1160px) {
+    .sectionContainer {
+        margin-top: 5rem;
+    }
+
+    .subTitle {
+        font-size: 1.1rem !important;
+        /* Tăng kích thước trên tablet */
+    }
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+    .formAndVideoContainer {
+        flex-direction: column;
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .progressSteps {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .step {
+        width: 30%;
+    }
+}

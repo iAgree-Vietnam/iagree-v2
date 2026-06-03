@@ -1,0 +1,273 @@
+/* Default settings for large desktops (>= 1025px) */
+.floatingButtonContainer {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.floatingButton {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #fff;
+  color: #12dc19;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.floatingButton:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+}
+
+.floatingButtonSubmenu {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.3s ease;
+  pointer-events: none;
+  visibility: hidden;
+  height: 0;
+}
+
+.floatingButtonSubmenu.active {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+  visibility: visible;
+  height: auto;
+}
+
+.submenuButton {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
+}
+
+.submenuButton:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Default icon styles */
+.floatingButton .primaryIcon {
+  width: 32px;
+  height: 32px;
+  fill: #09993e;
+}
+
+.submenuButton .zaloIcon {
+  width: 38px;
+  height: 38px;
+  fill: #25d366;
+}
+
+.submenuButton .whatsappIcon,
+.submenuButton .messengerIcon,
+.submenuButton .outlookIcon {
+  width: 28px;
+  height: 28px;
+}
+
+.submenuButton .whatsappIcon {
+  fill: #25d366;
+}
+
+.submenuButton .messengerIcon {
+  fill: #0084ff;
+}
+
+.submenuButton .outlookIcon {
+  fill: #0078d4;
+}
+
+/* Small desktops and landscape tablets (< 1024px) */
+@media (max-width: 1024px) {
+  .floatingButtonContainer {
+    bottom: 1.5rem;
+    right: 1.5rem;
+  }
+
+  .floatingButton {
+    width: 55px;
+    height: 55px;
+  }
+
+  .floatingButtonSubmenu {
+    gap: 1.25rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .submenuButton {
+    width: 45px;
+    height: 45px;
+  }
+  
+  .floatingButton .primaryIcon {
+    width: 28px;
+    height: 28px;
+  }
+  .submenuButton .zaloIcon {
+    width: 34px;
+    height: 34px;
+  }
+  .submenuButton .whatsappIcon,
+  .submenuButton .messengerIcon,
+  .submenuButton .outlookIcon {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+/* Tablets and landscape mobile devices (< 768px) */
+@media (max-width: 768px) {
+  .floatingButtonContainer {
+    bottom: 1.25rem;
+    right: 1.25rem;
+  }
+
+  .floatingButton {
+    width: 50px;
+    height: 50px;
+  }
+
+  .floatingButtonSubmenu {
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .submenuButton {
+    width: 40px;
+    height: 40px;
+  }
+
+  .floatingButton .primaryIcon {
+    width: 26px;
+    height: 26px;
+  }
+  .submenuButton .zaloIcon {
+    width: 32px;
+    height: 32px;
+  }
+  .submenuButton .whatsappIcon,
+  .submenuButton .messengerIcon,
+  .submenuButton .outlookIcon {
+    width: 22px;
+    height: 22px;
+  }
+}
+
+/* Small mobile devices (< 425px) */
+@media (max-width: 425px) {
+  .floatingButtonContainer {
+    bottom: 1rem;
+    right: 1rem;
+  }
+
+  .floatingButton {
+    width: 45px;
+    height: 45px;
+  }
+
+  .floatingButtonSubmenu {
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .submenuButton {
+    width: 35px;
+    height: 35px;
+  }
+
+  .floatingButton .primaryIcon {
+    width: 24px;
+    height: 24px;
+  }
+  .submenuButton .zaloIcon {
+    width: 30px;
+    height: 30px;
+  }
+  .submenuButton .whatsappIcon,
+  .submenuButton .messengerIcon,
+  .submenuButton .outlookIcon {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+/* Very small mobile devices (< 375px) */
+@media (max-width: 375px) {
+  .floatingButtonContainer {
+    bottom: 0.75rem;
+    right: 0.75rem;
+  }
+
+  .floatingButton {
+    width: 40px;
+    height: 40px;
+  }
+
+  .floatingButtonSubmenu {
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .submenuButton {
+    width: 30px;
+    height: 30px;
+  }
+
+  .floatingButton .primaryIcon {
+    width: 22px;
+    height: 22px;
+  }
+  .submenuButton .zaloIcon {
+    width: 28px;
+    height: 28px;
+  }
+  .submenuButton .whatsappIcon,
+  .submenuButton .messengerIcon,
+  .submenuButton .outlookIcon {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+/* Extremely small devices (< 320px) */
+@media (max-width: 320px) {
+  .floatingButtonContainer {
+    bottom: 0.5rem;
+    right: 0.5rem;
+  }
+  
+  .floatingButton .primaryIcon {
+    width: 20px;
+    height: 20px;
+  }
+  .submenuButton .zaloIcon {
+    width: 26px;
+    height: 26px;
+  }
+  .submenuButton .whatsappIcon,
+  .submenuButton .messengerIcon,
+  .submenuButton .outlookIcon {
+    width: 16px;
+    height: 16px;
+  }
+}

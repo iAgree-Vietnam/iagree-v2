@@ -1,0 +1,190 @@
+/* PartnerBadgesV3Elite.module.css - Elite badge styles with FDFAE8 and FFF6F4 theme */
+.badgeWrap {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.badgeElite {
+  /* Luxurious warm gradient with FDFAE8 and FFF6F4 as main colors */
+  background: linear-gradient(
+    135deg,
+    #ffffff 0%,
+    #fff6f4 10%,
+    #fdfae8 20%,
+    #f9f0d8 35%,
+    #f5e6c8 50%,
+    #f0dab8 65%,
+    #e8c89a 80%,
+    #dab676 95%,
+    #c9a355 100%
+  );
+  color: #8b4513;
+  border: 1.5px solid #dab676;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(218, 182, 118, 0.5);
+  text-shadow: 0 1px 3px rgba(255, 255, 255, 0.7);
+}
+
+/* Sophisticated glow animation for Elite badge */
+.badgeElite::before {
+  content: "";
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  right: -3px;
+  bottom: -3px;
+  background: linear-gradient(135deg, #dab676, #f5e6c8, #dab676);
+  border-radius: inherit;
+  z-index: -1;
+  opacity: 0.5;
+  filter: blur(5px);
+  animation: eliteGlow 2.5s ease-in-out infinite alternate;
+}
+
+/* Added premium golden accent ring */
+.badgeElite::after {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(135deg, #f5e6c8, #dab676, #c9a355);
+  border-radius: inherit;
+  z-index: -1;
+  opacity: 0.7;
+}
+
+.badgeLabel {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  position: relative;
+  z-index: 3;
+  color: #8b4513;
+  text-shadow: 0 1px 3px rgba(255, 255, 255, 0.8);
+}
+
+.badgesWrapper {
+  display: flex;
+  margin-top: 0.5rem;
+  gap: 3rem;
+}
+
+.badgeRow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.badgeWithText {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Shimmer Layer Base Styles */
+.shimmerLayer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: inherit;
+  z-index: 1;
+}
+
+/* Elite shimmer effects with warm golden tones */
+.proShimmer3 {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.95) 30%,
+    rgba(253, 250, 232, 0.9) 50%,
+    rgba(255, 255, 255, 0.95) 70%,
+    transparent 100%
+  );
+  transform: translateX(-100%) skewX(15deg);
+  animation: eliteShimmerHorizontal 2.8s infinite;
+}
+
+.proShimmer4 {
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.9) 30%,
+    rgba(253, 250, 232, 0.8) 50%,
+    rgba(255, 255, 255, 0.9) 70%,
+    transparent 100%
+  );
+  transform: translateY(-100%);
+  animation: eliteShimmerVertical 3.5s infinite;
+  animation-delay: 0.8s;
+}
+
+/* Elite shimmer animations */
+@keyframes eliteShimmerHorizontal {
+  0% {
+    transform: translateX(-100%) skewX(15deg);
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(200%) skewX(15deg);
+    opacity: 0;
+  }
+}
+
+@keyframes eliteShimmerVertical {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.9;
+  }
+  75% {
+    opacity: 0.9;
+  }
+  100% {
+    transform: translateY(200%);
+    opacity: 0;
+  }
+}
+
+/* Enhanced keyframes for Elite glow animation */
+@keyframes eliteGlow {
+  0% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0.7;
+    transform: scale(1.05);
+  }
+}
+
+@media (max-width: 599px) {
+  .badgesWrapper {
+    justify-content: center;
+  }
+  .badgeWrap {
+    padding: 4px 8px;
+    font-size: 0.65rem;
+  }
+}

@@ -1,0 +1,17 @@
+.sideMenu :global(.ant-menu-item:last-child) {
+  color: inherit !important;
+}
+
+.sideMenu :global(.ant-menu-item:last-child:hover) {
+  background: #fff !important;
+  color: inherit !important;
+}
+
+.sideMenu :global(.ant-menu-item:last-child) svg path {
+  fill: inherit !important;
+}
+
+.no-left-space {
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+}

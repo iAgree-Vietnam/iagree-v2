@@ -1,0 +1,12 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+/* @import "tailwindcss/preflight"; */
+
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities; */
+/* test thêm 1 class thường để chắc chắn CSS đang load */
+.tw-test-border {
+  border: 2px dashed red;
+}

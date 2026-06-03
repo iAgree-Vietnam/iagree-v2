@@ -1,0 +1,196 @@
+/* TeamModal.module.css */
+
+.partnerModal {
+  max-width: 90vw;
+}
+
+.modalHeader {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 1.5rem 2rem;
+}
+
+.modalAvatar {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 1px solid #999;
+  flex-shrink: 0;
+}
+
+.modalAvatar img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.headerInfo {
+  text-align: left;
+}
+
+.partnerName {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.partnerPosition {
+  font-size: 1rem;
+  color: #888;
+  margin: 0.5rem 0;
+}
+
+.verifiedIcon {
+  color: #12DC19;
+  font-size: 1.5rem;
+  margin-left: 0.5rem;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  color: #09993E;
+  margin-top: 0.5rem;
+}
+
+.starFilled {
+  color: #09993E; /* Đã thay đổi màu sao */
+}
+
+.starOutlined {
+  color: #ccc;
+}
+
+.modalBody {
+  padding: 0 2rem 2rem;
+  text-align: left;
+}
+
+.modalSection {
+  margin-bottom: 2rem;
+}
+
+.sectionTitle {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.descriptionText {
+  white-space: pre-wrap;
+}
+
+.contactItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.tagListContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.partnerTag {
+  padding: 0.25rem 0.75rem; /* Reduced padding */
+  font-size: 0.8rem; /* Reduced font size */
+  border-radius: 32px; /* Pill shape */
+  background-color: transparent; /* No background color */
+  border: 1px solid #999; /* Grey border */
+  color: #333; /* Dark text color */
+  transition: all 0.3s ease;
+  cursor: pointer; /* Add cursor pointer for clickability */
+}
+
+/* New CSS for the active state of the 'Show More' tag */
+.partnerTag.expandableTag {
+  border: 1px solid #999;
+  color: #333;
+}
+
+.partnerTag.expandableTag:hover {
+  background-color: #f0f0f0;
+  border: 1px solid #999;
+}
+
+.moreItemsTag {
+  padding: 0.25rem 0.75rem; /* Giảm padding */
+  font-size: 0.8rem; /* Giảm font size */
+  background-color: #f0f0f0;
+  color: #555;
+  border: 1px solid #999;
+  border-radius: 4px;
+}
+
+.totalReview {
+  font-size: 0.8rem;
+  color: #09993E; /* Đổi màu số lượng đánh giá thành màu xanh lá cây */
+}
+
+.list {
+  padding-left: 1.5rem;
+  margin: 0;
+}
+
+.list li {
+  margin-bottom: 0.5rem;
+}
+
+.projectGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+}
+
+.projectCard {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.projectCard:hover {
+  transform: scale(1.05);
+}
+
+.projectCard img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+}
+
+.projectName {
+  padding: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: bold;
+  text-align: center;
+  margin: 0;
+  color: #333;
+}
+
+.closeIcon {
+  font-size: 2rem;
+  color: #ccc;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .modalHeader {
+    flex-direction: column;
+    text-align: center;
+  }
+  .headerInfo {
+    text-align: center;
+  }
+}

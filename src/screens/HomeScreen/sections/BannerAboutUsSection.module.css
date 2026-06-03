@@ -1,0 +1,210 @@
+/* BannerVideoAnimation.module.css */
+
+.communityImpactSection {
+  background-color: #1a512c;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  gap: 1.5rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  margin-bottom: 5rem;
+  border-radius: 12px;
+  padding: 5rem;
+}
+
+.leftContent {
+  flex: 1;
+  width: 100%;
+  text-align: left;
+}
+
+.rightContent {
+  flex: 1;
+  width: 100%;
+}
+
+.mainHeading {
+  font-weight: 800;
+  line-height: 1.1;
+  color: #fff;
+  margin-bottom: 24px;
+  letter-spacing: -0.02em;
+}
+
+.greenText {
+  color: #12dc19;
+}
+
+.description {
+  font-size: 1.5rem;
+  line-height: 1.6;
+  color: #e0e0e0;
+  margin-bottom: 25px;
+  text-align: justify;
+}
+
+.primaryButton {
+  background: #09993E;
+  color: white;
+  padding: 1rem 1rem;
+  border-radius: 50px;
+  border: none;
+  font-size: 1.1rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  width: 50%;
+  animation: pulse 2s infinite;
+  transition: all 0.3s ease-in-out;
+}
+
+.primaryButton:hover {
+  background-color: #09993E;
+  color: #fff;
+  transform: scale(1.05);
+  animation: none;
+}
+
+.bannerImage {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.postJobButton {
+    background-color: #fff !important;
+    color: #09993E !important;
+    border: 1px solid #09993E !important;
+    font-weight: 600 !important;
+    font-size: 1.1rem !important; /* Tăng kích thước font */
+    padding: 1.2rem 3rem !important; /* Tăng padding để nút lớn hơn */
+    border-radius: 50px !important;
+    height: auto !important;
+    cursor: pointer;
+    /* Áp dụng animation */
+    animation: pulse 2s infinite;
+    /* Thêm transition cho hover */
+    transition: all 0.3s ease-in-out !important;
+}
+
+.postJobButton:hover {
+    background-color: #09993E !important;
+    color: #fff !important;
+    transform: scale(1.05);
+    animation: none; /* Tắt animation khi hover */
+}
+
+/* Các breakpoint để giảm size font và kích thước hình ảnh dần dần */
+@media (max-width: 2000px) {
+  .mainHeading {
+    font-size: 3.25rem;
+  }
+  .description {
+    font-size: 1.35rem;
+  }
+}
+
+@media (max-width: 1400px) {
+  .communityImpactSection {
+    margin: 1rem;
+    padding: 4rem;
+  }
+  .mainHeading {
+    font-size: 3rem;
+  }
+  .description {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 1200px) {
+  .communityImpactSection {
+    padding: 3.5rem;
+  }
+  .mainHeading {
+    font-size: 2.5rem;
+  }
+  .description {
+    font-size: 1.125rem;
+  }
+}
+
+/* Đây là breakpoint mới cho bố cục di động */
+@media (max-width: 900px) {
+  .communityImpactSection {
+    flex-direction: column;
+    padding: 3rem;
+  }
+  .leftContent {
+    text-align: center;
+  }
+  .mainHeading {
+    font-size: 2.25rem;
+  }
+  .description {
+    font-size: 1.1rem;
+  }
+  .primaryButton {
+    font-size: 0.9rem;
+  }
+  /* Bố cục di động bắt đầu từ đây, nên hình ảnh cần điều chỉnh lại */
+  .bannerImage {
+    width: 100%;
+    height: auto;
+  }
+}
+
+/* Thêm breakpoint 768px để giảm size chữ */
+@media (max-width: 768px) {
+  .communityImpactSection {
+    padding: 2rem;
+  }
+  .mainHeading {
+    font-size: 2rem;
+  }
+  .description {
+    font-size: 1rem;
+  }
+  .primaryButton {
+    font-size: 0.8rem;
+  }
+  .postJobButton {
+    font-size: 1rem !important;
+    padding: 1rem 2.5rem !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .communityImpactSection {
+    padding: 1.5rem;
+  }
+  .mainHeading {
+    font-size: 1.75rem;
+  }
+  .description {
+    font-size: 0.9rem;
+  }
+  .primaryButton {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 425px) {
+  .postJobButton {
+    font-size: 0.9rem !important;
+    padding: 0.9rem 2rem !important;
+  }
+}
+
+@media (max-width: 375px) {
+  .postJobButton {
+    font-size: 0.8rem !important;
+    padding: 0.8rem 1.8rem !important;
+  }
+}

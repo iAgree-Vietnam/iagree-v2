@@ -1,0 +1,152 @@
+/* GuideToFindingPartnersSection_4.module.css */
+
+.guideContainer {
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 16rem;
+    padding-bottom: 10rem;
+}
+
+.guideFlexContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    max-width: 1400px; /* Tăng max-width để cho phép nội dung rộng hơn */
+    width: 100%;
+}
+
+.videoContent {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-left: 0rem; /* Tăng padding */
+}
+
+.videoPlayerWrapper {
+    width: 100%;
+    position: relative;
+    padding-top: 56.25%; /* Giữ nguyên tỷ lệ 16:9 */
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    border: 5px solid #09993E;
+}
+
+.reactPlayer {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.textContent {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-right: 3rem; /* Tăng padding */
+}
+
+.mainTitle {
+    color: #09993E !important;
+    font-size: 2.2rem !important;
+    font-weight: 700 !important;
+    line-height: 1.2 !important;
+    margin-bottom: 1.5rem !important;
+}
+
+.subTitle {
+    color: #555 !important;
+    font-size: 1.5rem !important;
+    line-height: 1.5 !important;
+    margin-bottom: 2.5rem !important;
+}
+
+.postJobButton {
+    background-color: #fff !important;
+    color: #09993E !important;
+    border: 1px solid #09993E !important;
+    font-weight: 600 !important;
+    font-size: 1.1rem !important; /* Tăng kích thước font */
+    padding: 1rem 3rem !important; /* Tăng padding để nút lớn hơn */
+    border-radius: 50px !important;
+    height: auto !important;
+    cursor: pointer;
+    /* Áp dụng animation */
+    animation: pulse 2s infinite;
+    /* Thêm transition cho hover */
+    transition: all 0.3s ease-in-out !important;
+}
+
+.postJobButton:hover {
+    background-color: #09993E !important;
+    color: #fff !important;
+    transform: scale(1.05);
+    animation: none; /* Tắt animation khi hover */
+}
+
+@media (max-width: 1160px) {
+    .guideContainer {
+        background-color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 8rem;
+        padding-bottom: 8rem;
+    }
+    .mainTitle {
+        font-size: 2rem !important; /* Tăng kích thước trên tablet */
+    }
+    .subTitle {
+        font-size: 1.1rem !important; /* Tăng kích thước trên tablet */
+    }
+    .nextButton {
+        padding: 0.5rem 1.2rem !important; /* Giảm padding để giảm height */
+    }
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+    .guideFlexContainer {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .videoContent {
+        padding-left: 0;
+        margin-top: 2.5rem; /* Tăng margin */
+        width: 85%; /* Tăng kích thước video trên tablet */
+        order: 2; /* Đặt video nằm dưới */
+    }
+
+    .textContent {
+        padding-right: 0;
+        align-items: center;
+        order: 1; /* Đặt text và button nằm trên */
+        margin-bottom: 2.5rem; /* Thêm khoảng cách giữa text và video */
+    }
+
+    .mainTitle {
+        font-size: 2.5rem !important; /* Tăng kích thước trên tablet */
+    }
+    .subTitle {
+        font-size: 1.3rem !important; /* Tăng kích thước trên tablet */
+    }
+}
+
+@media (max-width: 576px) {
+    .videoContent {
+        width: 100%;
+    }
+    .mainTitle {
+        font-size: 2rem !important; /* Tăng kích thước trên mobile */
+    }
+    .subTitle {
+        font-size: 1.1rem !important; /* Tăng kích thước trên mobile */
+    }
+}

@@ -1,0 +1,145 @@
+.teamSection {
+  padding: 6rem 1rem;
+  color: #d1d5db;
+  overflow: hidden; 
+  text-align: center;
+  position: relative;
+}
+
+.backgroundImage {
+  position: absolute;
+  background: url("/assets/img/introduce/partner_office_bg.png") no-repeat center center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+}
+
+.blackOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.75);
+  z-index: -1;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.sectionTitle {
+  font-size: clamp(1.5rem, 5vw, 2.5rem) !important;
+  font-weight: 700;
+  color: white;
+  text-align: center;
+  line-height: 1.2;
+  margin-bottom: 3rem;
+}
+
+.textGreen {
+  color: #12DC19;
+}
+
+.teamGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.partnerCard {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  /* Chỉnh sửa hiệu ứng hover tại đây */
+  transition: transform 0.3s ease, background-color 0.3s ease, border 0.3s ease; 
+  cursor: pointer;
+  height: 100%;
+  justify-content: space-between;
+}
+
+.partnerCard:hover {
+  /* Loại bỏ translateY và thay bằng scale */
+  transform: scale(1.05); 
+  background-color: rgba(255, 255, 255, 0.2);
+  /* Thêm viền border màu xanh lá cây */
+  border: 1px solid #12DC19;
+}
+
+.partnerImage {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 0 3px rgba(127, 131, 127, 0.5);
+  transition: transform 0.3s ease;
+}
+
+.partnerCard:hover .partnerImage {
+  /* Giữ nguyên hiệu ứng scale cho ảnh */
+  transform: scale(1.1);
+}
+
+.partnerImage img {
+  object-fit: cover !important;
+  width: 100%;
+  height: 100%;
+}
+
+.partnerInfo {
+  margin-top: 1rem;
+  width: 100%;
+  max-width: 100%;
+}
+
+.partnerName {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #fff;
+  margin: 0 auto;
+  transition: color 0.3s ease; /* Add transition for a smooth color change */
+  /* Text truncation properties */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+  max-width: 100%; /* Adjust this value based on your card width */
+}
+
+.partnerPosition {
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: rgb(188, 188, 188);
+  margin: 0 auto;
+  transition: color 0.3s ease;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+  max-width: 100%;
+}
+
+@media (max-width: 768px) {
+  .teamGrid {
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .teamGrid {
+    gap: 1rem;
+  }
+}

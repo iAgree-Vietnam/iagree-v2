@@ -1,0 +1,76 @@
+version: "3.8"
+
+services:
+  v2-frontend:
+    container_name: v2-frontend
+    platform: linux/amd64
+    restart: always
+
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        PROJECT_NAME: web
+        PORT_PROGRAM: 3000
+
+    image: v2-frontend:latest
+
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+      - TZ=Asia/Ho_Chi_Minh
+
+    networks:
+      - iagree
+
+    # Nếu cần debug trực tiếp:
+    # ports:
+    #   - "3000:3000"
+
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=iagree"
+
+      # HTTP -> HTTPS
+      - "traefik.http.routers.v2-frontend.entrypoints=http"
+      - "traefik.http.routers.v2-frontend.rule=Host(`iagree.asia`)"
+      - "traefik.http.routers.v2-frontend.middlewares=v2-frontend-https-redirect"
+      - "traefik.http.middlewares.v2-frontend-https-redirect.redirectscheme.scheme=https"
+
+      # HTTPS
+      - "traefik.http.routers.v2-frontend-secure.entrypoints=https"
+      - "traefik.http.routers.v2-frontend-secure.rule=Host(`iagree.asia`)"
+      - "traefik.http.routers.v2-frontend-secure.tls=true"
+      - "traefik.http.routers.v2-frontend-secure.tls.certresolver=letsencrypt"
+      - "traefik.http.routers.v2-frontend-secure.service=v2-frontend"
+
+      # Service
+      - "traefik.http.services.v2-frontend.loadbalancer.server.port=3000"
+      - "traefik.http.services.v2-frontend.loadbalancer.passhostheader=true"
+
+      # Sticky session
+      - "traefik.http.services.v2-frontend.loadbalancer.sticky.cookie=true"
+      - "traefik.http.services.v2-frontend.loadbalancer.sticky.cookie.name=iagree_session"
+
+      # Compress
+      - "traefik.http.middlewares.v2-frontend-compress.compress=true"
+      - "traefik.http.middlewares.v2-frontend-compress.compress.minresponsebodybytes=1400"
+
+      # Cache static
+      - "traefik.http.middlewares.v2-frontend-headers.headers.customresponseheaders.Cache-Control=public, max-age=31536000, immutable"
+
+      # Security headers
+      - "traefik.http.middlewares.v2-frontend-sec.headers.framedeny=true"
+      - "traefik.http.middlewares.v2-frontend-sec.headers.browserxssfilter=true"
+      - "traefik.http.middlewares.v2-frontend-sec.headers.contenttypenosniff=true"
+
+      # Rate limit
+      - "traefik.http.middlewares.v2-frontend-ratelimit.ratelimit.average=200"
+      - "traefik.http.middlewares.v2-frontend-ratelimit.ratelimit.burst=100"
+
+      # Attach middlewares vào HTTPS router
+      - "traefik.http.routers.v2-frontend-secure.middlewares=v2-frontend-compress,v2-frontend-sec,v2-frontend-headers,v2-frontend-ratelimit"
+
+networks:
+  iagree:
+    external: true

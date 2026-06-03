@@ -1,0 +1,91 @@
+.partnersSection {
+  padding-top: 10rem;
+  padding-bottom: 5rem;
+  background-color: #fff;
+}
+
+.partnersContainer {
+  max-width: 1400px;
+  margin: 0 auto;
+  text-align: center;
+  border: 1px solid #e4e4e6;
+  border-radius: 16px;
+  padding: 2rem 0rem;
+}
+
+.partnersTitle {
+  font-size: clamp(1.5rem, 5vw, 2.5rem) !important;
+  font-weight: 700;
+  color: #333;
+  text-align: center;
+  line-height: 1.2;
+  margin-bottom: 3rem;
+}
+
+.greenText {
+  color: #09993E;
+}
+
+.logo {
+  margin-left: 5px;
+}
+
+.partnerLogoWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 150px;
+  padding: 1rem;
+}
+
+/* Grid layout cho desktop & tablet */
+.partnersGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+@media (max-width: 1000px) {
+  .partnersGrid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.8rem;
+  }
+}
+
+/* Mobile => chuyển sang marquee */
+@media (max-width: 768px) {
+  .partnersGrid {
+    display: none; /* Ẩn grid */
+  }
+
+  .marquee {
+    overflow: hidden;
+    width: 100%;
+  }
+
+  .marqueeContent {
+    display: flex;
+    gap: 2rem;
+    width: max-content;
+    animation: marqueeScroll 20s linear infinite;
+  }
+
+  @keyframes marqueeScroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+}
+
+/* Mobile nhỏ */
+@media (max-width: 480px) {
+  .marqueeContent {
+    gap: 1rem;
+    animation-duration: 15s; /* nhanh hơn cho màn nhỏ */
+  }
+}

@@ -1,0 +1,129 @@
+.IntroduceHeader {
+  background-color: white;
+  padding: 1.5rem 30px;
+  box-shadow: 0 2px 4px rgb(0 0 0 / 0.1);
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header-container {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  /* Luôn sử dụng space-between */
+  justify-content: space-evenly;
+}
+
+.logo-wrapper {
+  /* Loại bỏ margin-right không cần thiết */
+  margin-right: 0;
+}
+
+.header-menu {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+}
+
+.header-menu-item {
+  color: #000000;
+  text-decoration: none;
+  font-size: 14px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Hover trên desktop: nền xanh lá, chữ trắng */
+.header-menu-item:hover {
+  background-color: #298a00;
+  color: white;
+}
+
+/* Mobile menu button chỉ hiện trên màn hình nhỏ */
+.mobile-only {
+  display: none;
+}
+
+.mobile-menu-button {
+  background-color: white;
+  border: 1px solid #09993E;
+  border-radius: 9999px;
+  padding: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mobile-menu-button :global(svg) {
+  stroke: #000000;
+  width: 24px;
+  height: 24px;
+}
+
+@media (max-width: 1024px) {
+  .header-menu-item {
+    font-size: 13px;
+    padding: 6px 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-menu {
+    display: none;
+  }
+
+  .header-content {
+    /* Luôn sử dụng space-between */
+    justify-content: space-between;
+  }
+
+  .mobile-only {
+    display: block;
+  }
+
+  .header-mobile-menu {
+    background-color: white;
+    padding: 10px 20px;
+    box-shadow: 0 2px 10px rgb(0 0 0 / 0.15);
+    margin-top: 10px;
+    border-radius: 8px;
+  }
+
+  .header-mobile-menu-item {
+    display: block;
+    padding: 12px 15px;
+    color: #298a00;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-size: 14px;
+  }
+
+  /* Hover trên mobile: nền xanh lá, chữ trắng */
+  .header-mobile-menu-item:hover {
+    background-color: #298a00;
+    color: white;
+  }
+}
+
+@media (max-width: 480px) {
+  .IntroduceHeader {
+    padding: 15px 20px;
+  }
+  
+  .header-mobile-menu-item {
+    padding: 10px 12px;
+    font-size: 12px;
+  }
+}

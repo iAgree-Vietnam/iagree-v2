@@ -1,0 +1,19 @@
+/* src/components/SectionDivider.module.css */
+
+.dividerHalfWidth {
+  width: 50%;
+  height: 1px;
+  border-radius: 12px;
+  justify-self: center;
+  background-color: #09993E;
+  margin: 2rem 0; /* Điều chỉnh khoảng cách trên và dưới tùy ý */
+}
+
+.dividerFullWidth {
+  width: 8%;
+  height: 1px;
+  border-radius: 12px;
+  justify-self: center;
+  background-color: #09993E;
+  margin: 0.5rem 0; /* Điều chỉnh khoảng cách trên và dưới tùy ý */
+}

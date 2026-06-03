@@ -1,0 +1,280 @@
+/* --- General Layout --- */
+.getStartedContainer {
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 24px;
+  background-color: #ffffff;
+  color: #333;
+  overflow: hidden;
+}
+
+.getStartedContent {
+  max-width: 1200px;
+  width: 100%;
+}
+
+.textColumn {
+  text-align: left;
+  z-index: 10;
+}
+
+.mainTitle {
+  color: #333;
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 24px;
+  line-height: 1.2;
+}
+
+.descriptionText {
+  color: #555;
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 40px;
+  display: block;
+}
+
+.startButton {
+  height: 50px;
+  padding: 0 32px;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: 600;
+  background-color: #09993e;
+  border-color: #09993e;
+}
+
+/* --- Image Animation Section --- */
+.imageColumn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.imageStackContainer {
+  max-width: 100%;
+  height: 550px;
+}
+
+.imageStackItem {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 16px;
+  opacity: 0;
+  animation: fade-in-out 9s infinite ease-in-out;
+}
+
+/* Định nghĩa animation */
+@keyframes fade-in-out {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  11% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  33% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  44% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Delay và Transform cho từng ảnh */
+.imageStackItem:nth-child(1) {
+  animation-delay: 0s;
+  transform: rotate(-10deg) translate(-50px, -20px);
+}
+
+.imageStackItem:nth-child(2) {
+  animation-delay: 3s;
+  transform: rotate(8deg) translate(30px, 30px);
+}
+
+.imageStackItem:nth-child(3) {
+  animation-delay: 6s;
+  transform: rotate(2deg) translate(-20px, 40px);
+}
+
+/* --- Responsive --- */
+
+/* Bố cục dạng cột và căn giữa cho các màn hình nhỏ hơn 1200px (Mobile & Tablet) */
+@media (max-width: 1199px) {
+  .getStartedContent {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .textColumn {
+    text-align: start;
+    margin-bottom: 32px;
+    padding-right: 40px;
+  }
+  .imageColumn {
+    width: 100%;
+    margin-top: 24px;
+  }
+  .imageStackContainer {
+    max-width: 100%;
+    height: 450px;
+  }
+}
+
+/* Màn hình lớn (Large Desktops) */
+@media (min-width: 1440px) {
+  .getStartedContent {
+    max-width: 1400px;
+  }
+  .mainTitle {
+    font-size: 60px;
+  }
+}
+
+/* Laptop & Desktop nhỏ */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .textColumn {
+    text-align: center;
+    margin-bottom: 32px;
+  }
+  .getStartedContainer {
+    padding: 48px 0px;
+  }
+  .mainTitle {
+    font-size: 42px;
+  }
+  .descriptionText {
+    font-size: 16px;
+  }
+}
+
+/* Tablets */
+@media (min-width: 768px) and (max-width: 991px) {
+  .textColumn {
+    text-align: center;
+    margin-bottom: 32px;
+    padding-inline: 40px;
+  }
+  .getStartedContainer {
+    padding: 48px 16px;
+  }
+  .imageStackContainer {
+    max-width: 100%;
+    height: 650px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  .getStartedContainer {
+    padding: 40px 20px;
+    min-height: auto;
+    text-align: center;
+  }
+  .textColumn {
+    text-align: center;
+  }
+  .mainTitle {
+    font-size: 32px;
+  }
+  .descriptionText {
+    font-size: 16px;
+    margin-bottom: 32px;
+  }
+  .startButton {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+    font-size: 16px;
+  }
+  /* Bỏ quy tắc 'display: none;' để hình ảnh hiển thị */
+  .imageColumn {
+    width: 100%;
+    margin-top: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .imageStackContainer {
+    max-width: 100%;
+    height: 450px;
+  }
+}
+
+@media (max-width: 650px) {
+  .textColumn {
+    text-align: center;
+  }
+  .imageStackContainer {
+    max-width: 100%;
+    height: 450px;
+  }
+}
+
+@media (max-width: 500px) {
+  .textColumn {
+    text-align: center;
+  }
+  .imageStackContainer {
+    max-width: 100%;
+    height: 400px;
+  }
+}
+
+@media (max-width: 450px) {
+  .imageStackContainer {
+    max-width: 100%;
+    height: 350px;
+  }
+}
+
+@media (max-width: 400px) {
+  .imageStackContainer {
+    max-width: 100%;
+    height: 300px;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 350px) {
+  .imageStackContainer {
+    max-width: 100%;
+    height: 250px;
+    justify-content: center;
+  }
+  .mainTitle {
+    font-size: 16px;
+  }
+  .descriptionText {
+    font-size: 12px;
+  }
+  .startButton {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    font-size: 16px;
+  }
+}
+
+
+/* Mobile nhỏ */
+@media (max-width: 480px) {
+  .textColumn {
+    text-align: center;
+    margin-bottom: 32px;
+    padding-inline: 40px;
+  }
+}

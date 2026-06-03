@@ -1,0 +1,151 @@
+.faqSection {
+  padding: 6rem 0rem;
+  background-color: #fff;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.sectionTitle {
+  font-size: clamp(1.5rem, 5vw, 2.5rem) !important;
+  font-weight: 700;
+  color: #000;
+  line-height: 1.2;
+}
+
+.greenText {
+  color: #12DC19;
+}
+
+.greenTextPrimary {
+  color: #09993E;
+  font-weight: 600;
+}
+
+.underline {
+  width: 150px;
+  height: 2px;
+  background-color: #09993E;
+  margin: 0.5rem auto 0;
+}
+
+.accordionTwoColumns {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.accordionColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 50%;
+}
+
+.accordionItem {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.3s ease;
+}
+
+.accordionItem:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.accordionButton {
+  width: 100%;
+  background-color: white;
+  padding: 1rem 1.5rem;
+  text-align: left;
+  font-weight: 600;
+  color: #333;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: background-color 0.3s ease;
+}
+
+.accordionButtonContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  /* Đảm bảo container này chiếm toàn bộ chiều rộng */
+}
+
+.buttonText {
+  font-size: clamp(0.85rem, 1.5vw, 1rem);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex-grow: 1;
+  /* Cho phép span mở rộng để chiếm không gian */
+  margin-right: 1rem;
+}
+
+.ulList {
+  padding-left: 1rem;
+}
+
+.accordionButton:hover {
+  background-color: #09993E;
+  color: white;
+}
+
+.downArrow {
+  transition: transform 0.3s ease;
+  font-size: 0.8rem;
+  color: #999;
+  flex-shrink: 0;
+}
+
+.rotated {
+  transform: rotate(-180deg);
+}
+
+.answerContent {
+  background-color: #f9f9f9;
+  padding: 0 1.5rem;
+  max-height: 0;
+  overflow: hidden;
+  color: #333;
+  transition: max-height 0.4s ease-in-out, padding 0.4s ease-in-out;
+}
+
+.answerContent.active {
+  max-height: 350px;
+  padding: 1rem 1.5rem;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .accordionTwoColumns {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .accordionColumn {
+    width: 100%;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .faqSection {
+    padding: 4rem 0rem;
+  }
+
+  .accordionButton {
+    padding: 0.8rem 1rem;
+  }
+}

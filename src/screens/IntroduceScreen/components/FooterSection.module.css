@@ -1,0 +1,102 @@
+/* FooterSection.module.css */
+
+.footerSection {
+  background-color: #fff;
+  color: #333;
+  padding: 3rem 2rem;
+  border-top: 1px solid #ddd;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.footerContent {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #eee;
+  gap: 2rem;
+}
+
+/* Cột thông tin công ty */
+.companyInfoColumn {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  min-width: 250px;
+}
+
+.logoWrapper {
+  margin-bottom: 1rem;
+}
+
+.companyTitle {
+  font-weight: bold;
+}
+
+.businessIdTitle,
+.addressTitle,
+.mailTitle {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.address,
+.businessId,
+.mail {
+  font-size: 0.9rem;
+  color: #333;
+  font-weight: bold;
+}
+
+.bctLogoWrapper {
+  margin-top: 1rem;
+}
+
+.bctLogoBackground {
+  background-color: #fff;
+  padding: 5px;
+  display: inline-block;
+}
+
+/* Cột Google Maps */
+.mapColumn {
+  flex: 2;
+}
+
+/* iframe sẽ chiếm toàn bộ chiều cao của div cha */
+.mapColumn iframe {
+  width: 100%;
+  height: 100%; /* Đảm bảo iframe chiếm hết chiều cao */
+  border-radius: 8px;
+  border: 0;
+}
+
+/* Phần dưới cùng */
+.bottomSection {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1rem;
+}
+
+.socialIcons {
+  display: flex;
+  gap: 1rem;
+}
+
+.copyright {
+  font-size: 0.8rem;
+  color: #888;
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+  .footerSection {
+    padding: 2rem 1rem;
+  }
+}

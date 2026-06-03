@@ -1,0 +1,24 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: nextjs-ingress
+  annotations:
+    traefik.ingress.kubernetes.io/router.entrypoints: "websecure"
+    traefik.ingress.kubernetes.io/router.tls: "true"
+    traefik.ingress.kubernetes.io/router.tls.certresolver: "letsencrypt"  # Để sử dụng chứng chỉ SSL từ Let's Encrypt
+spec:
+  rules:
+    - host: iagree.vn  # Thay đổi với tên miền của bạn
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: nextjs-service  # Tên của service mà Traefik sẽ route đến
+                port:
+                  number: 80  # Cổng mà service đang lắng nghe
+  tls:
+    - hosts:
+        - iagree.vn  # Tên miền của bạn
+      secretName: nextjs-tls-secret  # Secret để lưu trữ chứng chỉ SSL

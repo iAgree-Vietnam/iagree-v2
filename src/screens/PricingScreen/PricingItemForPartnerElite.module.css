@@ -1,0 +1,613 @@
+.pricingItemCol {
+  background: linear-gradient(
+    135deg,
+    #ffffff 0%,
+    #fff6f4 15%,
+    #fdfae8 30%,
+    #f9f0d8 50%,
+    #f5e6c8 70%,
+    #f0dab8 85%,
+    #e8c89a 100%
+  );
+  border-radius: 12px;
+  padding: 24px;
+  border: 1px solid #e5e7eb;
+  height: 100%;
+  position: relative;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.pricingOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(43, 44, 44, 0.4);
+  /* màu xanh mờ */
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.pricingOverlayText {
+  color: white;
+  font-weight: 700;
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: center;
+  user-select: none;
+}
+
+.pricingTitle {
+  font-size: 24px;
+  font-weight: 600;
+  color: #8b4513;
+  margin: 20px 16px 16px 16px;
+  text-align: center;
+  /* Set fixed height for consistent layout */
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pricingPriceWrapper {
+  text-align: center;
+  margin-bottom: 16px;
+  /* Set fixed height for price section */
+  height: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.pricingPriceMain {
+  font-size: 20px;
+  font-weight: 700;
+  color: #16a34a;
+  margin-bottom: 4px;
+}
+
+.pricingOriginalPrice {
+  font-size: 16px;
+  color: #9ca3af;
+  text-decoration: line-through;
+  margin-bottom: 4px;
+}
+
+.pricingDuration {
+  font-size: 14px;
+  color: #8b6914;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+
+.pricingDescription {
+  font-size: 14px;
+  color: #8b6914;
+  text-align: center;
+  margin-bottom: 24px;
+  line-height: 1.5;
+  /* Set fixed height and limit to 3 lines */
+  height: 63px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.pricingFeaturesWrapper {
+  flex: 1;
+  margin-bottom: 24px;
+  padding: 10px;
+  /* Set minimum height for features section */
+  min-height: 200px;
+}
+
+.pricingFeaturesTitle {
+  font-size: 14px;
+  color: #8b6914;
+  margin-bottom: 16px;
+}
+
+.pricingFeaturesList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.pricingFeatureItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pricingFeatureIcon {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pricingFeatureIcon.included {
+  background: #16a34a;
+}
+
+.pricingFeatureIcon.notIncluded {
+  background: #e5e7eb;
+}
+
+.pricingFeatureText {
+  font-size: 13px;
+  line-height: 20px;
+  letter-spacing: 0.3px;
+}
+
+.pricingFeatureText.included {
+  font-weight: 500;
+}
+
+.pricingFeatureText.notIncluded {
+  color: #9ca3af;
+  font-weight: 400;
+}
+
+.pricingButton {
+  margin: 0 30px;
+  align-self: center;
+  min-width: 160px;
+  font-weight: 400;
+}
+
+/* ---------------------------------------------------------------------- */
+/* THÊM STYLE CHO NÚT VÔ HIỆU HÓA (SẮP RA MẮT) */
+/* ---------------------------------------------------------------------- */
+
+.pricingButton[disabled],
+.comingSoonButton {
+  /* Vô hiệu hóa tương tác */
+  cursor: not-allowed;
+  pointer-events: none;
+
+  /* Hiệu ứng mờ */
+  opacity: 0.7;
+
+  /* Thay đổi màu sắc thành xám để thể hiện trạng thái vô hiệu hóa */
+  background-color: #6b7280 !important; /* Màu xám nhạt */
+  color: #d9d9d9 !important; /* Màu chữ xám đậm hơn */
+  box-shadow: none !important;
+}
+
+/* Đảm bảo icon bên trong cũng bị mờ */
+.pricingButton[disabled] svg,
+.comingSoonButton svg {
+  fill: #6b7280 !important;
+}
+
+.pricingLabelTypePackge {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  background: linear-gradient(
+    135deg,
+    #ffffff 0%,
+    #fff6f4 15%,
+    #fdfae8 30%,
+    #f9f0d8 50%,
+    #f5e6c8 70%,
+    #f0dab8 85%,
+    #e8c89a 100%
+  );
+  color: #8b4513;
+  border: 1px solid #dab676;
+  box-shadow: 0 4px 20px rgba(163, 168, 181, 0.5);
+  text-shadow: 0 1px 3px rgba(255, 255, 255, 0.7);
+  padding: 4px 8px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.pricingFeatureName {
+  color: #16a34a;
+  font-weight: bold;
+}
+
+.pricingFeatureValue {
+  color: #8b6914;
+}
+
+.pricingFeatureValueMiddle {
+  color: #09993e;
+}
+
+.pricingFeatureValueEnd {
+  color: #8b6914;
+}
+
+/* Responsive styles */
+
+@media (min-width: 2000px) {
+  .pricingFeatureIcon {
+    width: 22px;
+    height: 22px;
+  }
+
+  .pricingDiscountLabel {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: #16a34a;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+    white-space: nowrap;
+  }
+
+  .pricingLabelTypePackge {
+    top: 16px;
+    left: 16px;
+  }
+
+  .pricingTitle {
+    font-size: 22px;
+  }
+
+  .pricingPriceMain {
+    font-size: 35px;
+  }
+
+  .pricingOriginalPrice {
+    font-size: 20px;
+  }
+
+  .pricingDuration {
+    font-size: 16px;
+  }
+
+  .pricingDescription {
+    font-size: 16px;
+  }
+
+  .pricingFeaturesTitle {
+    font-size: 18px;
+  }
+
+  .pricingFeatureText {
+    font-size: 15px;
+  }
+
+  .pricingButton {
+    min-width: 200px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 1999px) and (min-width: 1440px) {
+  .pricingFeatureIcon {
+    width: 21px;
+    height: 21px;
+  }
+
+  .pricingDiscountLabel,
+  .pricingLabelTypePackge {
+    position: absolute;
+    top: 14px;
+    padding: 4px 8px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+    white-space: nowrap;
+  }
+
+  .pricingDiscountLabel {
+    right: 14px;
+    background: #16a34a;
+    color: white;
+  }
+
+  .pricingLabelTypePackge {
+    left: 14px;
+  }
+
+  .pricingTitle {
+    font-size: 18px;
+  }
+
+  .pricingPriceMain {
+    font-size: 30px;
+  }
+
+  .pricingOriginalPrice {
+    font-size: 18px;
+  }
+
+  .pricingDuration {
+    font-size: 15px;
+  }
+
+  .pricingDescription {
+    font-size: 15px;
+  }
+
+  .pricingFeaturesTitle {
+    font-size: 16px;
+  }
+
+  .pricingFeatureText {
+    font-size: 14px;
+  }
+
+  .pricingButton {
+    min-width: 180px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 1439px) and (min-width: 1024px) {
+  .pricingFeatureIcon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .pricingDiscountLabel,
+  .pricingLabelTypePackge {
+    position: absolute;
+    top: 12px;
+    padding: 3px 7px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 500;
+    white-space: nowrap;
+  }
+
+  .pricingDiscountLabel {
+    right: 12px;
+    background: #16a34a;
+    color: white;
+  }
+
+  .pricingLabelTypePackge {
+    left: 12px;
+  }
+
+  .pricingTitle {
+    font-size: 16px;
+  }
+
+  .pricingPriceMain {
+    font-size: 25px;
+  }
+
+  .pricingOriginalPrice {
+    font-size: 16px;
+  }
+
+  .pricingDuration {
+    font-size: 14px;
+  }
+
+  .pricingDescription {
+    font-size: 14px;
+  }
+
+  .pricingFeaturesTitle {
+    font-size: 14px;
+  }
+
+  .pricingFeatureText {
+    font-size: 13px;
+  }
+
+  .pricingButton {
+    min-width: 160px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 1023px) and (min-width: 600px) {
+  .pricingFeatureIcon {
+    width: 18px;
+    height: 18px;
+  }
+
+  .pricingDiscountLabel,
+  .pricingLabelTypePackge {
+    position: absolute;
+    top: 10px;
+    padding: 3px 7px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 500;
+    white-space: nowrap;
+  }
+
+  .pricingDiscountLabel {
+    right: 10px;
+    background: #16a34a;
+    color: white;
+  }
+
+  .pricingLabelTypePackge {
+    left: 10px;
+  }
+
+  .pricingTitle {
+    font-size: 14px;
+  }
+
+  .pricingPriceMain {
+    font-size: 22px;
+  }
+
+  .pricingOriginalPrice {
+    font-size: 14px;
+  }
+
+  .pricingDuration {
+    font-size: 13px;
+  }
+
+  .pricingDescription {
+    font-size: 13px;
+  }
+
+  .pricingFeaturesTitle {
+    font-size: 12px;
+  }
+
+  .pricingFeatureText {
+    font-size: 12px;
+  }
+
+  .pricingButton {
+    min-width: 140px;
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 599px) and (min-width: 325px) {
+  .pricingFeatureIcon {
+    width: 15px;
+    height: 15px;
+  }
+
+  .pricingDiscountLabel,
+  .pricingLabelTypePackge {
+    position: absolute;
+    top: 7px;
+    padding: 3px 8px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 500;
+    white-space: nowrap;
+  }
+
+  .pricingDiscountLabel {
+    right: 7px;
+    background: #16a34a;
+    color: white;
+  }
+
+  .pricingLabelTypePackge {
+    left: 7px;
+  }
+
+  .pricingTitle {
+    font-size: 16px;
+  }
+
+  .pricingPriceMain {
+    font-size: 28px;
+  }
+
+  .pricingOriginalPrice {
+    font-size: 18px;
+  }
+
+  .pricingDuration {
+    font-size: 15px;
+  }
+
+  .pricingDescription {
+    font-size: 15px;
+  }
+
+  .pricingFeaturesTitle {
+    font-size: 15px;
+  }
+
+  .pricingFeatureText {
+    font-size: 13px;
+  }
+
+  .pricingButton {
+    min-width: 120px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 324px) {
+  .pricingFeatureIcon {
+    width: 12px;
+    height: 12px;
+  }
+
+  .pricingDiscountLabel,
+  .pricingLabelTypePackge {
+    position: absolute;
+    top: 5px;
+    padding: 3px 6px;
+    border-radius: 20px;
+    font-size: 8px;
+    font-weight: 500;
+    white-space: nowrap;
+  }
+
+  .pricingDiscountLabel {
+    right: 5px;
+    background: #16a34a;
+    color: white;
+  }
+
+  .pricingLabelTypePackge {
+    left: 5px;
+  }
+
+  .pricingTitle {
+    font-size: 12px;
+  }
+
+  .pricingPriceMain {
+    font-size: 15px;
+  }
+
+  .pricingOriginalPrice {
+    font-size: 12px;
+  }
+
+  .pricingDuration {
+    font-size: 11px;
+  }
+
+  .pricingDescription {
+    font-size: 11px;
+  }
+
+  .pricingFeaturesTitle {
+    font-size: 11px;
+  }
+
+  .pricingFeatureText {
+    font-size: 10px;
+  }
+
+  .pricingButton {
+    min-width: 100px;
+    font-size: 9px;
+  }
+}
+
+@media (max-width: 767px) {
+  .pricingItemCol {
+    max-width: 100%;
+    width: 100%;
+  }
+}

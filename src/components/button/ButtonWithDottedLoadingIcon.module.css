@@ -1,0 +1,60 @@
+.btnWithIcon {
+  display: flex;
+  align-items: center;
+  width: max-content !important;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btnIconWrapper {
+  background-color: #09993e;
+  border-radius: 48px;
+  width: 20px; /* icon + padding */
+  height: 20px;
+  padding: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  transition: background-color 0.3s ease;
+  box-sizing: content-box;
+}
+
+.btnIconContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s linear;
+}
+
+.icon {
+  padding: 3px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Hover thay đổi background */
+.btnWithIcon:hover .btnIconWrapper {
+  background-color: #ffffff;
+}
+
+.btnWithIcon .icon svg {
+  color: #fff;
+}
+
+/* Hover icon xoay */
+.btnWithIcon:hover .icon svg {
+  animation: rotate 1.5s linear infinite;
+  color: #09993e;
+}
+
+/* Xoay tròn */
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

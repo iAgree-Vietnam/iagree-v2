@@ -1,0 +1,121 @@
+.servicesSection {
+  position: relative;
+  padding: 0rem 0;
+  overflow: hidden;
+  padding-bottom: 8rem;
+  margin-top: 6rem;
+}
+
+.contentWrapper {
+  position: relative;
+  z-index: 1;
+  color: white;
+  text-align: center;
+  padding: 0 1rem;
+}
+
+.sectionTitle {
+  color: #09993E !important;
+  font-size: clamp(2rem, 5vw, 2.5rem) !important;
+  font-weight: 700 !important;
+  margin-bottom: 3rem !important;
+  text-align: center;
+}
+
+.sectionTitleSpan {
+  color: white;
+  font-weight: 400;
+}
+
+.categoriesGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  /* Đổi sang 1fr để tự động chia đều */
+  gap: 15px;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 900px;
+  /* Giới hạn chiều rộng tối đa */
+}
+
+.categoryCard {
+  background-color: #09993E;
+  border-radius: 12px;
+  padding: 0.8rem;
+  text-align: center;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid transparent;
+  align-items: center;
+  justify-content: space-between;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  width: 100%;
+  /* Đổi width sang 100% để thích ứng với grid */
+  height: auto;
+  gap: 1rem;
+  /* Giảm gap để có khoảng cách hợp lý hơn */
+}
+
+.categoryCard:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(16, 236, 31, 0.3);
+  border: 1px solid #e0e0e0;
+}
+
+.categoryIcon {
+  width: 100%;
+  /* Chỉnh lại width thành 100% để hình ảnh chiếm toàn bộ chiều rộng card */
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.categoryTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  margin: 0;
+  /* Đảm bảo không có margin không cần thiết */
+  word-break: break-word;
+  /* Ngăn chặn tràn chữ ra khỏi card */
+}
+
+/* responsive */
+@media (max-width: 1200px) {
+  .categoriesGrid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 992px) {
+  .categoriesGrid {
+    grid-template-columns: repeat(3, 1fr);
+    /* 3 cột trên tablet */
+    max-width: 700px;
+  }
+}
+
+@media (max-width: 768px) {
+  .categoriesGrid {
+    grid-template-columns: repeat(2, 1fr);
+    /* 2 cột trên điện thoại lớn */
+    max-width: 500px;
+  }
+}
+
+@media (max-width: 480px) {
+  .categoriesGrid {
+    grid-template-columns: repeat(2, 1fr);
+    /* Giữ 2 cột trên điện thoại nhỏ */
+    max-width: 90%;
+  }
+
+  .categoryCard {
+    padding: 0.5rem;
+  }
+
+  .categoryTitle {
+    font-size: 0.9rem;
+  }
+}

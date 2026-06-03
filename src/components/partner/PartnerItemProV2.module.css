@@ -1,0 +1,324 @@
+/* PartnerItemPro.module.css - Pro partner item styles coordinated with AC9C8D theme */
+.partnerItemContainer {
+  padding: 10px;
+  padding-bottom: 24px;
+  border-radius: 20px;
+  display: flex;
+  border: 1.5px solid #d4cfc4;
+  flex-direction: column;
+  gap: 20px;
+  /* Updated background to coordinate with Pro badge AC9C8D theme */
+  background: linear-gradient(135deg, #f5f3f0 0%, #e8e4dc 30%, #f5f3f0 70%, #e8e4dc 100%);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.partnerItemContainer:hover {
+  border: 1.5px solid #ac9c8d;
+  box-shadow: 0 4px 15px rgba(172, 156, 141, 0.25);
+}
+
+.partnerItemTop {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 24px 16px;
+  padding-top: 40px;
+  /* Updated background to coordinate with Pro badge gradient */
+  background: linear-gradient(135deg, #f5f3f0 30%, #e8e4dc 50%, #d4cfc4 100%);
+  border-radius: 12px;
+  position: relative;
+  border: 1.5px solid #d4cfc4;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.partnerItemTop:hover {
+  border-color: #ac9c8d;
+  box-shadow: 0 2px 10px rgba(172, 156, 141, 0.2);
+}
+
+.foundingTag {
+  height: 36px;
+  width: 135px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Updated to use Pro theme color */
+  background: linear-gradient(135deg, #ac9c8d 0%, #9a8a7a 100%);
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 150%;
+  border-radius: 2px 2px 8px 8px;
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  box-shadow: 0 4px 12px rgba(172, 156, 141, 0.5);
+}
+
+.foundingTagContainer {
+  width: 145px;
+  height: 28px;
+  position: absolute;
+  top: -1px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 0 0 10px 10px;
+  border: 1.5px solid #d4cfc4;
+  /* Updated background to coordinate with Pro theme */
+  background: linear-gradient(135deg, #f5f3f0, #e8e4dc);
+  z-index: 1;
+}
+
+.partnerItemBottom,
+.partnerItemCenter {
+  padding: 0 10px;
+}
+
+.partnerItemBottom .btnWithIcon {
+  background-color: transparent;
+  /* Updated button color to Pro theme */
+  color: #ac9c8d;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.partnerItemBottom .btnWithIcon:hover {
+  color: #9a8a7a;
+  text-shadow: 0 0 6px rgba(172, 156, 141, 0.6);
+}
+
+.partnerItemCenter .itemInfo .itemLabel,
+.partnerItemCenter .itemInfo .itemValue {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: -0.176px;
+  margin-bottom: 0;
+}
+
+.partnerItemCenter .itemInfo .itemLabel {
+  color: #6b6b6b;
+  font-weight: 400;
+  flex-shrink: 0;
+  margin-right: 16px;
+}
+
+.avatarContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.imageAvatar {
+  border-radius: 50%;
+  overflow: hidden;
+  object-fit: cover;
+  /* Updated avatar border to Pro theme */
+  border: 2px solid #d4cfc4;
+}
+
+.descContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.descContainer .partnerName {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 30px;
+  margin-bottom: 0;
+  /* Updated name color to Pro theme */
+  color: #72383d;
+  text-shadow: 0 1px 2px rgba(245, 243, 240, 0.9);
+}
+
+.descContainer .partnerPosition {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 150%;
+  letter-spacing: -0.176px;
+  margin-bottom: 0;
+  color: #5a5a5a;
+}
+
+.rateContainer {
+  display: flex;
+  gap: 4px;
+  justify-content: center;
+}
+
+.rateContainer .rateInfo {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.176px;
+  margin-bottom: 0;
+  color: #5a5a5a;
+}
+
+.rateContainer .reviews {
+  color: #8c8c8c;
+  margin-left: 7px;
+}
+
+.tagsContainer {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  min-height: 31px;
+}
+
+.descriptionContainer {
+  height: 65px;
+  margin-top: 12px;
+  overflow: hidden;
+}
+
+.descriptionText {
+  color: grey;
+  margin: 0;
+}
+
+.tagsContainer .ant-tag {
+  max-width: 160px;
+  padding: 6px 22px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: normal;
+  border-radius: 20px;
+  /* Updated tag styling to coordinate with Pro theme */
+  border: 1px solid #d4cfc4;
+  background: linear-gradient(135deg, #f5f3f0, #e8e4dc);
+  color: #4a453f;
+  margin: 0;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+  box-shadow: 0 2px 5px rgba(212, 207, 196, 0.3);
+}
+
+.tagsContainer .ant-tag:hover {
+  border-color: #ac9c8d;
+  background: linear-gradient(135deg, #e8e4dc, #d4cfc4);
+  color: #4a453f;
+  box-shadow: 0 0 10px rgba(172, 156, 141, 0.4);
+}
+
+/* Updated star icon color to Pro theme */
+.rateContainer .anticon.anticon-star {
+  color: #ac9c8d;
+}
+
+.divider {
+  width: 0.5px;
+  height: 20px;
+  background-color: #d1d1d1;
+  margin: 0 10px;
+}
+
+.jobWithPartnerItemContainer {
+  padding: 16px;
+  padding-top: 20px;
+  border-radius: 10px;
+  /* Updated background to Pro theme */
+  background: linear-gradient(to bottom right, #f5f3f0 0%, #e8e4dc 100%);
+  box-shadow: 0 4px 14px rgba(212, 207, 196, 0.4);
+  transition: box-shadow 0.3s ease;
+}
+
+.jobWithPartnerItemContainer:hover {
+  box-shadow: 0 6px 20px rgba(172, 156, 141, 0.3);
+}
+
+.jobWithPartnerItemContainer .ant-descriptions .ant-descriptions-item-label,
+.jobWithPartnerItemContainer .jobName {
+  color: #232f3e;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.jobWithPartnerItemContainer .reviewContent {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 150%;
+  color: #606060;
+}
+
+/* Skills container styles remain the same */
+.skillsContainer::-webkit-scrollbar {
+  display: none;
+}
+
+.skillsContainer {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  overflow-x: auto;
+  white-space: nowrap;
+  flex: 1;
+  -webkit-overflow-scrolling: touch;
+}
+
+.skillsContainerV2 {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  flex: 1;
+  margin: 0 4px;
+  gap: 5px;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.skillsContainerV2::-webkit-scrollbar {
+  display: none;
+}
+
+@media (max-width: 992px) {
+  .tagsContainer .ant-tag {
+    max-width: 120px;
+  }
+}
+
+.avatarWrapper {
+  position: relative;
+  width: 110px;
+  height: 110px;
+  margin: 0 auto;
+}
+
+.verifiedIcon {
+  position: absolute;
+  bottom: -7px;
+  right: 0;
+  z-index: 1;
+}
+
+.verifiedIconBackground {
+  background-color: white;
+  border-radius: 50%;
+  padding: 0;
+  border: 2px solid white;
+}
+
+.partnerNameText {
+  height: 1.3em;
+  overflow: hidden;
+  margin-bottom: 0;
+}
+
+.partnerPositionText {
+  height: 1.3em;
+  overflow: hidden;
+}
+
+.rateInfoContainer {
+  display: flex;
+  align-items: center;
+}
+
+.reviewsText {
+  color: #8c8c8c;
+  margin-left: 7px;
+}
