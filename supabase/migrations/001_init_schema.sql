@@ -308,15 +308,15 @@ create policy "Parties can update contracts" on contracts
 -- Messages: room participants only
 create policy "Messages viewable by room participants" on messages
   for select using (
-    auth.uid() = any(
-      select participant_ids from chat_rooms where id = room_id
+    exists (
+      select 1 from chat_rooms where id = room_id and auth.uid() = any(participant_ids)
     )
   );
 create policy "Room participants can send messages" on messages
   for insert with check (
     auth.uid() = sender_id and
-    auth.uid() = any(
-      select participant_ids from chat_rooms where id = room_id
+    exists (
+      select 1 from chat_rooms where id = room_id and auth.uid() = any(participant_ids)
     )
   );
 
