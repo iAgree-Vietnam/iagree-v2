@@ -19,11 +19,11 @@ class AppErrorBoundary extends React.Component<
     this.state = { hasError: false, error: '' }
   }
   static getDerivedStateFromError(error: Error) {
-    return { hasError: true, error: error?.message + '\n' + (error?.stack || '').slice(0, 500) }
+    return { hasError: true, error: (error?.stack || error?.message || String(error)) }
   }
   componentDidCatch(error: Error, info: any) {
-    console.error('[AppErrorBoundary] Render error:', error?.message, error?.stack?.slice(0, 300))
-    console.error('[AppErrorBoundary] Component stack:', info?.componentStack?.slice(0, 300))
+    const msg = (error?.stack || error?.message || '') + '\n\nCOMPONENT STACK:\n' + (info?.componentStack || '')
+    this.setState({ error: msg })
   }
   render() {
     if (this.state.hasError) {
