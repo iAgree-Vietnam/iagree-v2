@@ -28,6 +28,7 @@ import JobOverviewStep from "./components/steps/over_view_step/JobOverviewStep";
 import { useRouter } from "next/router";
 import PostJobSuccessScreen from "../../JobsPostSuccess/JobsPostSuccess";
 import { useSearchParams } from "next/navigation";
+import AIJobBriefButton from "@/src/components/AIJobBrief/AIJobBriefButton";
 
 interface JobFormScreenV2Props {
   jobId?: number | null | undefined;
@@ -485,17 +486,25 @@ function JobFormScreenV2(props: JobFormScreenV2Props) {
           JobAddFormUtils.getActiveStepIndex(
             Constants.JOB_ADD_FORM.TAB.JOB_ADD_OVERVIEW
           ) && (
-          <JobOverviewStep
-            form={form}
-            selectboxResource={selectboxResource}
-            salaryType={salaryType}
-            setSalaryType={setSalaryType}
-            selectedCategoryIds={selectedCategoryIds}
-            filteredSkills={filteredSkills}
-            serviceCategoriesAvailable={serviceCategoriesAvailable}
-            selectedCategoryServiceIds={selectedCategoryServiceIds}
-            servicesAvailable={servicesAvailable}
-          />
+          <>
+            <div style={{ display: "flex", justifyContent: "flex-end", marginBottom: 12 }}>
+              <AIJobBriefButton
+                form={form}
+                selectboxResource={selectboxResource}
+              />
+            </div>
+            <JobOverviewStep
+              form={form}
+              selectboxResource={selectboxResource}
+              salaryType={salaryType}
+              setSalaryType={setSalaryType}
+              selectedCategoryIds={selectedCategoryIds}
+              filteredSkills={filteredSkills}
+              serviceCategoriesAvailable={serviceCategoriesAvailable}
+              selectedCategoryServiceIds={selectedCategoryServiceIds}
+              servicesAvailable={servicesAvailable}
+            />
+          </>
         )}
 
         {stepIndex ===
