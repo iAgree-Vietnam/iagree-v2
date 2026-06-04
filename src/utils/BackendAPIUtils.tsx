@@ -32,8 +32,13 @@ export default async function fetchUtil(
     headers: newHeaders,
   };
 
+  // Use local API routes (/api/v2) instead of old Laravel API
+  const localBase = typeof window !== 'undefined'
+    ? '/api/v2'  // CSR: relative URL
+    : (process.env.NEXTAUTH_URL || process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000') + '/api/v2';
+
   const endpointUrl = [
-    _.trimEnd(process.env.API_BASE_URL, "/"),
+    _.trimEnd(localBase, "/"),
     _.trimStart(input, "/"),
   ].join("/");
 

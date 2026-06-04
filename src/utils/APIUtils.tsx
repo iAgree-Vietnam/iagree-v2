@@ -5,7 +5,7 @@ import _ from 'lodash';
 import Cookies from 'js-cookie';
 
 const apiUtils = axios.create({
-    baseURL: process.env.API_BASE_URL,
+    baseURL: '/api/v2',
     paramsSerializer: (params) => qs.stringify(params, { arrayFormat: 'comma', strictNullHandling: true, skipNulls: true }),
 });
 
