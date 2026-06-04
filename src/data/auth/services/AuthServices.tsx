@@ -14,17 +14,16 @@ import {
 } from "../models/types";
 import { AuthParseUtils } from "../utils/AuthParseUtils";
 import EndpointConfig from "../../../constants/EndpointConfig";
+import { supabase } from "@/lib/supabase";
 
 export default class AuthServices {
-  login(formDatas: LoginParams): Promise<LoginResource> {
-    return new Promise((resolve, reject) => {
-      apiUtils
-        .post(EndpointConfig.AUTH_LOGIN, {
-          ...formDatas,
-        })
-        .then((apiRes) => resolve(AuthParseUtils.login(apiRes.data)))
-        .catch(reject);
+  async login(formDatas: LoginParams): Promise<LoginResource> {
+    const { data, error } = await supabase.auth.signInWithPassword({
+      email: formDatas.email,
+      password: formDatas.password,
     });
+    if (error) throw new Error(error.message);
+    return { accessToken: data.session?.access_token || '' };
   }
 
   loginGoogle(formDatas: LoginGoogleParams): Promise<LoginResource> {
@@ -79,30 +78,50 @@ export default class AuthServices {
     });
   }
 
-  register(formDatas: RegisterParams): Promise<RegisterResponse> {
-    return new Promise((resolve, reject) => {
-      apiUtils
-        .post(EndpointConfig.AUTH_REGISTER_V2, {
-          ...formDatas,
-          account_type: "PERSONAL",
-          password_confirmation: formDatas.password,
-        })
-        .then((apiRes) => resolve(AuthParseUtils.register(formDatas.email)))
-        .catch(reject);
+  async register(formDatas: RegisterParams): Promise<RegisterResponse> {
+    const { data, error } = await supabase.auth.signUp({
+      email: formDatas.email,
+      password: formDatas.password,
+      options: {
+        data: {
+          display_name: formDatas.name || formDatas.name_rep,
+          phone: formDatas.phone,
+        },
+      },
     });
+    if (error) throw new Error(error.message);
+    // Create profile row
+    if (data.user) {
+      await supabase.from('profiles').upsert({
+        id: data.user.id,
+        display_name: formDatas.name || formDatas.name_rep || '',
+        role: 'both',
+      }, { onConflict: 'id' });
+    }
+    return { email: formDatas.email, message: null };
   }
 
-  companyRegister(formDatas: RegisterParams): Promise<RegisterResponse> {
-    return new Promise((resolve, reject) => {
-      apiUtils
-        .post(EndpointConfig.AUTH_REGISTER_V2, {
-          ...formDatas,
-          account_type: "BUSINESS",
-          password_confirmation: formDatas.password,
-        })
-        .then((apiRes) => resolve(AuthParseUtils.register(formDatas.email)))
-        .catch(reject);
+  async companyRegister(formDatas: RegisterParams): Promise<RegisterResponse> {
+    const { data, error } = await supabase.auth.signUp({
+      email: formDatas.email,
+      password: formDatas.password,
+      options: {
+        data: {
+          display_name: formDatas.name_rep || formDatas.name,
+          account_type: 'BUSINESS',
+          tax_code: formDatas.tax_code,
+        },
+      },
     });
+    if (error) throw new Error(error.message);
+    if (data.user) {
+      await supabase.from('profiles').upsert({
+        id: data.user.id,
+        display_name: formDatas.name_rep || formDatas.name || '',
+        role: 'both',
+      }, { onConflict: 'id' });
+    }
+    return { email: formDatas.email, message: null };
   }
 
   forgotPassword(

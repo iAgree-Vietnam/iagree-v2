@@ -159,10 +159,11 @@ export default function usePaginatedJobs(
       //     }
       // }
 
-      // return new JobServices().get(queryParams);
-      return props?.version == 1
-        ? new JobServices().get(queryParams)
-        : new JobServices().getV2(queryParams);
+      // Use Supabase for v2 (default), fall back to legacy API for version=1
+      if (props?.version == 1) {
+        return new JobServices().get(queryParams) as any;
+      }
+      return new JobServices().listFromSupabase(queryParams) as any;
     },
     initialData: initData,
     enabled,

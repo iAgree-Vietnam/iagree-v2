@@ -17,8 +17,18 @@ export async function signIn(provider?: string, options?: Record<string, any>) {
       options: { redirectTo: options?.callbackUrl || `${window.location.origin}/auth/callback` }
     })
   }
+  // credentials provider → map to Supabase signInWithPassword
   if (options?.email && options?.password) {
-    return supabase.auth.signInWithPassword({ email: options.email, password: options.password })
+    const { data, error } = await supabase.auth.signInWithPassword({
+      email: options.email,
+      password: options.password,
+    })
+    if (error) {
+      // Return NextAuth-compatible error shape
+      const msg = error.message || 'Login failed'
+      return { ok: false, error: `WRONG_PASSWORD:${msg}`, status: error.status || 400, url: null }
+    }
+    return { ok: true, error: null, status: 200, url: null, data }
   }
   return supabase.auth.signInWithOAuth({ provider: 'google' })
 }

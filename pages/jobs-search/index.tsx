@@ -7,17 +7,34 @@ import {
 
 import JobsSearchScreen from "@/src/screens/JobsSearchScreen/JobsSearchScreen";
 import { JobParseUtils } from "@/src/data/job/utils/JobParseUtils";
-
 import Seo from "@/src/components/Seo";
 import { ConstantConfig } from "@/src/constants/Config";
+import { createAdminClient } from "@/lib/supabase";
 
 export const getServerSideProps: GetServerSideProps = async (
   context: GetServerSidePropsContext
 ) => {
+  // Fetch categories from Supabase for filter panel
+  let supabaseCategories: any[] = [];
+  try {
+    const adminClient = createAdminClient();
+    const { data } = await adminClient
+      .from("categories")
+      .select("id, name, slug, parent_id")
+      .order("name");
+    supabaseCategories = data || [];
+  } catch (e) {
+    supabaseCategories = [];
+  }
+
   return {
     props: {
       jobFilters: JobParseUtils.jobQueries(context.query),
       query: context.query,
+      skills: [],
+      serviceCategories: [],
+      services: [],
+      supabaseCategories,
     },
   };
 };

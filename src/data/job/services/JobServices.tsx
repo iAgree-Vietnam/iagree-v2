@@ -27,6 +27,7 @@ import NumberUtils from "@/src/utils/NumberUtils";
 import { FullJobResourceV2, JobResourceV2 } from "../models/v2/job.types";
 import { JobParseUtilsV2 } from "../utils/JobParseUtilsV2";
 import fetchUtil from "@/src/utils/BackendAPIUtils";
+import { supabase } from "@/lib/supabase";
 
 export default class JobServices {
   get(queryParams: any): Promise<DatasResource<JobResource>> {
@@ -451,5 +452,124 @@ export default class JobServices {
         .then((apiRes) => resolve(JobParseUtilsV2.list(apiRes.data)))
         .catch(reject);
     });
+  }
+
+  // ── SUPABASE METHODS ─────────────────────────────────────────────────────────
+
+  /** Map a Supabase job row to the FullJobResourceV2 shape expected by UI */
+  private static mapSupabaseJob(job: any): FullJobResourceV2 {
+    const now = new Date();
+    const expiresAt = job.expires_at ? new Date(job.expires_at) : null;
+    const isExpired = expiresAt ? expiresAt < now : false;
+
+    const formatDate = (dateStr?: string) => {
+      if (!dateStr) return "";
+      const d = new Date(dateStr);
+      if (isNaN(d.getTime())) return "";
+      return `${d.getDate().toString().padStart(2, "0")}/${(d.getMonth() + 1)
+        .toString()
+        .padStart(2, "0")}/${d.getFullYear()}`;
+    };
+
+    // Determine salaryType: 1=DEAL, 2=RANGE, 3=FIXED
+    let salaryType = Constants.JOB.SALARY_TYPE.DEAL;
+    if (job.budget_min && job.budget_max && job.budget_min < job.budget_max) {
+      salaryType = Constants.JOB.SALARY_TYPE.RANGE;
+    } else if (job.budget_max) {
+      salaryType = Constants.JOB.SALARY_TYPE.FIXED;
+    }
+
+    // Badge info
+    let badgeLabel = "Đang tuyển";
+    let badgeStatus = "ACTIVE";
+    if (isExpired) {
+      badgeLabel = "Hết hạn";
+      badgeStatus = "EXPIRED";
+    } else if (job.status !== "open") {
+      badgeLabel = "Đóng";
+      badgeStatus = "CLOSED";
+    }
+
+    return {
+      jobId: job.id as any, // UUID string used as React key
+      name: job.title || "",
+      status: job.status === "open" ? 1 : 0,
+      postingEndDate: formatDate(job.expires_at),
+      createdByUserId: 0,
+      partnerUserId: 0,
+      startDate: formatDate(job.created_at),
+      endDate: formatDate(job.expires_at || job.deadline),
+      price: job.budget_max || job.budget_min || 0,
+      connect: 0,
+      salaryType,
+      priceMin: job.budget_min || 0,
+      priceMax: job.budget_max || 0,
+      description: job.description || "",
+      jobDurationType: Constants.JOB.DURATION_TYPE?.DAYS ?? 1,
+      duration: job.duration_days || 0,
+      react: 0,
+      isExpired,
+      applicantsCount: job.proposals_count || 0,
+      skills: (job.skills_required || []).map((name: string, i: number) => ({
+        skillId: i,
+        name,
+      })),
+      badgeInfo: { badgeLabel, badgeStatus },
+    } as any;
+  }
+
+  /** List jobs from Supabase with basic filtering/pagination */
+  async listFromSupabase(filters: Record<string, any>): Promise<DatasResource<FullJobResourceV2>> {
+    const limit = filters.per_page || 12;
+    const page = Math.max(1, filters.page || 1);
+    const offset = (page - 1) * limit;
+
+    let query = supabase
+      .from("jobs")
+      .select(
+        `id, title, description, status, budget_min, budget_max, duration_days,
+         deadline, expires_at, created_at, proposals_count, views_count,
+         skills_required, category_id`,
+        { count: "exact" }
+      )
+      .eq("status", "open")
+      .order("created_at", { ascending: false })
+      .range(offset, offset + limit - 1);
+
+    if (filters.name) {
+      query = query.ilike("title", `%${filters.name}%`);
+    }
+
+    if (filters.price_min) {
+      query = query.gte("budget_min", filters.price_min);
+    }
+
+    if (filters.price_max) {
+      query = query.lte("budget_max", filters.price_max);
+    }
+
+    const { data, error, count } = await query;
+
+    if (error) {
+      console.error("[JobServices.listFromSupabase] error:", error);
+      return { items: [], total: 0 };
+    }
+
+    return {
+      items: (data || []).map(JobServices.mapSupabaseJob),
+      total: count || 0,
+    };
+  }
+
+  /** Get a single job by ID from Supabase */
+  async getByIdFromSupabase(id: string): Promise<FullJobResourceV2 | null> {
+    const { data, error } = await supabase
+      .from("jobs")
+      .select(`*, profiles(display_name, avatar_url, avg_rating), categories(name, slug)`)
+      .eq("id", id)
+      .single();
+
+    if (error || !data) return null;
+    return JobServices.mapSupabaseJob(data);
   }
 }
