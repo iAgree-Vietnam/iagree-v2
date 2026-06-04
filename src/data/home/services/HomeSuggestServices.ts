@@ -1,4 +1,9 @@
-import { createClient } from '@/lib/supabase/client'
+import { createClient } from '@supabase/supabase-js'
+
+const getClient = () => createClient(
+  process.env.NEXT_PUBLIC_SUPABASE_URL!,
+  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+)
 import {
   HomeInitResource,
   HomeSuggestParams,
@@ -11,7 +16,7 @@ export default class HomeSuggestServices {
   }
 
   async init(): Promise<Partial<HomeInitResource>> {
-    const supabase = createClient()
+    const supabase = getClient()
     
     // Fetch latest open jobs for homepage
     const { data: jobs } = await supabase
