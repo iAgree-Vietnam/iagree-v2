@@ -1,32 +1,46 @@
-import apiUtils from "@/src/utils/APIUtils";
-import EndpointConfig from "@/src/constants/EndpointConfig";
+import { createClient } from '@/lib/supabase/client'
 import {
   HomeInitResource,
   HomeSuggestParams,
   HomeSuggestResponse,
 } from "../models/home.types";
-import { HomeParseUtilsV2 } from "../utils/HomeParseUtilsV2";
 
 export default class HomeSuggestServices {
   search(queryParams: HomeSuggestParams): Promise<HomeSuggestResponse> {
-    return new Promise((resolve, reject) => {
-      apiUtils
-        .get(EndpointConfig.HOME_SUGGESTIONS, { params: queryParams })
-        .then((apiRes) => resolve(apiRes.data))
-        .catch(reject);
-    });
+    return Promise.resolve({ data: [], total: 0 } as any)
   }
 
-  init(): Promise<Partial<HomeInitResource>> {
-    return new Promise((resolve, reject) => {
-      apiUtils
-        // .get(EndpointConfig.HOME_INIT)
-        .get(EndpointConfig.HOME_INIT_V2)
-        .then((apiRes) => {
-          // resolve(HomeParseUtils.init(apiRes.data));
-          resolve(HomeParseUtilsV2.init(apiRes.data));
-        })
-        .catch(reject);
-    });
+  async init(): Promise<Partial<HomeInitResource>> {
+    const supabase = createClient()
+    
+    // Fetch latest open jobs for homepage
+    const { data: jobs } = await supabase
+      .from('jobs')
+      .select('id, title, description, skills_required, budget_min, budget_max, deadline, created_at, status, categories(name, slug)')
+      .eq('status', 'open')
+      .order('created_at', { ascending: false })
+      .limit(8)
+
+    // Map to expected format
+    const mappedJobs = (jobs || []).map((j: any) => ({
+      id: j.id,
+      title: j.title,
+      description: j.description,
+      skills: j.skills_required || [],
+      budget_from: j.budget_min,
+      budget_to: j.budget_max,
+      time: j.deadline,
+      category_name: j.categories?.name || '',
+      status: 'OPEN',
+      slug: j.id,
+      url: j.id,
+    }))
+
+    return {
+      jobs: { items: mappedJobs },
+      latestJobs: mappedJobs,
+      topPartners: [],
+      banners: [],
+    } as any
   }
 }
