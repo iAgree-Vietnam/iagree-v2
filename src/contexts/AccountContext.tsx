@@ -112,6 +112,11 @@ export const AccountProvider = ({ children }: { children: React.ReactNode }) => 
 
 export const useAccountContext = () => {
   const ctx = useContext(AccountContext);
-  if (!ctx) throw new Error("useAccountContext must be used within AccountProvider");
+  // Return safe defaults instead of throwing — supports dynamic Providers loading
+  if (!ctx) return {
+    accessToken: null, setAccessToken: () => {}, auth: null, isLoggedIn: false,
+    setting: null, loading: false, loadingSetting: false,
+    refreshAccount: async () => {}, logout: () => {},
+  } as unknown as AccountContextShape;
   return ctx;
 };
