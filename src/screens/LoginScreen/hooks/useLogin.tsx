@@ -3,8 +3,10 @@ import { signIn } from "@/lib/shim/next-auth-react";
 import dialogUtils from "@/src/utils/DialogUtils";
 import { LoginParams } from "@/src/data/auth/models/types";
 import { message } from "antd";
+import { useRouter } from "next/router";
 
 export default function useLogin() {
+  const router = useRouter();
   return useMutation({
     mutationKey: ["AUTH_LOGIN"],
     mutationFn: async (variables: LoginParams) => {
@@ -52,6 +54,13 @@ export default function useLogin() {
     onSuccess: (result) => {
       if (result?.ok) {
         message.success("Đăng nhập thành công");
+        // Redirect after successful login
+        setTimeout(() => {
+          const callbackUrl = typeof window !== 'undefined'
+            ? new URLSearchParams(window.location.search).get('callbackUrl') || '/'
+            : '/';
+          router.push(callbackUrl);
+        }, 500);
       }
     },
     onError: (error: any) => {
